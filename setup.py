@@ -8,36 +8,35 @@
 #           dr-prodigy <maurizio.montel@gmail.com> (c) 2017-2020
 #  Website: https://github.com/dr-prodigy/python-holidays
 #  License: MIT (see LICENSE file)
-
 import codecs
-import re
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+import sys
 
+from setuptools import setup, find_packages
 
-with codecs.open('holidays/__init__.py', 'r', 'utf-8') as fd:
-    version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
-                        fd.read(), re.MULTILINE).group(1)
+install_requirements = [
+    'python-dateutil',
+    'six',
+    'convertdate',
+    'korean_lunar_calendar',
+]
 
-if not version:
-    raise RuntimeError('Cannot find version information')
+if sys.version_info >= (3, 6):
+    install_requirements.append('hijri_converter')
 
 setup(
     name='holidays',
-    version=version,
+    version='0.10.3',
     author='ryanss',
     author_email='ryanssdev@icloud.com',
     maintainer='dr-prodigy',
     maintainer_email='maurizio.montel@gmail.com',
     url='https://github.com/dr-prodigy/python-holidays',
-    packages=['holidays', 'holidays/countries'],
+    packages=find_packages(include=['holidays']),
     license='MIT',
     description='Generate and work with holidays in Python',
     long_description=codecs.open('README.rst', encoding='utf-8').read(),
-    install_requires=['python-dateutil', 'six', 'convertdate',
-                      'korean_lunar_calendar'],
+    long_description_content_type='text/x-rst',
+    install_requires=install_requirements,
     platforms='any',
     classifiers=[
         'Development Status :: 4 - Beta',
