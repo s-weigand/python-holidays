@@ -3,6 +3,7 @@ on: [push, pull_request]
 
 jobs:
   flake8:
+    name: Run Quality Assurance
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,9 +17,10 @@ jobs:
           pip install flake8
       - name: Lint with flake8
         run: |
-          flake8 holidays tests.py
+          flake8 holidays tests
 
   test:
+    name: "Test: py${{ matrix.python-version }} on ${{ matrix.os }}"
     runs-on: ${{ matrix.os }}
     needs: [flake8]
     strategy:
@@ -52,6 +54,7 @@ jobs:
           name: ${{ matrix.os }}-py${{ matrix.python-version }}
 
   deploy:
+    name: Upload new version to PyPi
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
     needs: [test]
