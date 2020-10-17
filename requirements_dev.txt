@@ -9,7 +9,7 @@ hijri_converter==2.1.1; python_version > '3.6'
 pytest
 pytest-runner
 pytest-cov
-coverage
+coverage[toml]
 pre-commit
 flake8
 

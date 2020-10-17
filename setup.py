@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #  python-holidays
 #  ---------------
 #  A fast, efficient Python library for generating country, province and state
@@ -31,7 +32,7 @@ setup(
     maintainer="dr-prodigy",
     maintainer_email="maurizio.montel@gmail.com",
     url="https://github.com/dr-prodigy/python-holidays",
-    packages=find_packages(include=["holidays"]),
+    packages=find_packages(),
     license="MIT",
     description="Generate and work with holidays in Python",
     long_description=codecs.open("README.rst", encoding="utf-8").read(),
