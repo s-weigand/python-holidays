@@ -10,6 +10,7 @@ pytest
 pytest-runner
 pytest-cov
 coverage
+pre-commit
 flake8
 
 #deployment
