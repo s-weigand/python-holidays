@@ -122,7 +122,7 @@ class TestUS(unittest.TestCase):
         )
         self.assertEqual(
             holidays.US(state="ID").get("2015-01-19"),
-            "Martin Luther King, Jr. - Idaho Human Rights Day",
+            "Martin Luther King Jr. - Idaho Human Rights Day",
         )
         self.assertNotEqual(
             holidays.US(state="ID").get("2000-01-17"),

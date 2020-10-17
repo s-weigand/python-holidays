@@ -137,7 +137,7 @@ class TestKorea(unittest.TestCase):
                 self.holidays[date(year, month, day)],
                 "Alternative holiday of Children's Day",
             )
-        for year, mont, day in [(2025, 5, 6), (2044, 5, 6)]:
+        for year, month, day in [(2025, 5, 6), (2044, 5, 6)]:
             self.assertIn(
                 "Alternative holiday of Children's Day",
                 self.holidays[date(year, month, day)],

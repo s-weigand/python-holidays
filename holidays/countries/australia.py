@@ -222,8 +222,7 @@ class Australia(HolidayBase):
             if year == 2020:
                 self[date(year, AUG, 14)] = name
             else:
-                self[date(year, AUG, 5) + rd(weekday=FR) + rd(weekday=WE)] = \
-                    name
+                self[date(year, AUG, 5) + rd(weekday=FR) + rd(weekday=WE)] = name
 
         # Christmas Day
         name = "Christmas Day"
