@@ -12,9 +12,7 @@ class TestHongKong(unittest.TestCase):
         self.assertTrue(self.holidays.isLeapYear(2000))
         self.assertFalse(self.holidays.isLeapYear(2100))
         holidaysNoObserved = holidays.HK(observed=False)
-        self.assertEqual(
-            holidaysNoObserved[date(2019, 1, 1)], "The first day of January"
-        )
+        self.assertEqual(holidaysNoObserved[date(2019, 1, 1)], "The first day of January")
         self.assertEqual(
             self.holidays[date(2015, 9, 3)],
             "The 70th "
@@ -32,9 +30,7 @@ class TestHongKong(unittest.TestCase):
                     "The day following the first day of January",
                 )
             else:
-                self.assertEqual(
-                    self.holidays[date(year, 1, 1)], "The first day of January"
-                )
+                self.assertEqual(self.holidays[date(year, 1, 1)], "The first day of January")
 
     def test_lunar_new_year(self):
         for year, month, day in [(2006, 1, 28), (2007, 2, 17), (2010, 2, 13)]:
@@ -56,9 +52,7 @@ class TestHongKong(unittest.TestCase):
             (2019, 2, 5),
             (2020, 1, 25),
         ]:
-            self.assertEqual(
-                self.holidays[date(year, month, day)], "Lunar New Year's Day"
-            )
+            self.assertEqual(self.holidays[date(year, month, day)], "Lunar New Year's Day")
 
         for year, month, day in [
             (2006, 1, 30),
@@ -128,9 +122,7 @@ class TestHongKong(unittest.TestCase):
             (2019, 4, 5),
             (2020, 4, 4),
         ]:
-            self.assertEqual(
-                self.holidays[date(year, month, day)], "Ching Ming Festival"
-            )
+            self.assertEqual(self.holidays[date(year, month, day)], "Ching Ming Festival")
 
         self.assertEqual(
             self.holidays[date(2015, 4, 6)],
@@ -238,9 +230,7 @@ class TestHongKong(unittest.TestCase):
             (2019, 6, 7),
             (2020, 6, 25),
         ]:
-            self.assertEqual(
-                self.holidays[date(year, month, day)], "Tuen " + "Ng Festival"
-            )
+            self.assertEqual(self.holidays[date(year, month, day)], "Tuen " + "Ng Festival")
 
         self.assertEqual(
             self.holidays[date(2008, 6, 9)], "The day " + "following Tuen Ng Festival"
@@ -266,10 +256,7 @@ class TestHongKong(unittest.TestCase):
                 "Hong Kong " + "Special Administrative Region Establishment " + "Day",
             )
 
-        name = (
-            "The day following Hong Kong Special Administrative Region "
-            + "Establishment Day"
-        )
+        name = "The day following Hong Kong Special Administrative Region " + "Establishment Day"
         self.assertEqual(self.holidays[date(2007, 7, 2)], name)
         self.assertEqual(self.holidays[date(2012, 7, 2)], name)
         self.assertEqual(self.holidays[date(2018, 7, 2)], name)
@@ -296,9 +283,7 @@ class TestHongKong(unittest.TestCase):
                 "The " + "day following the Chinese Mid-Autumn Festival",
             )
 
-        self.assertEqual(
-            self.holidays[date(2009, 10, 3)], "Chinese " + "Mid-Autumn Festival"
-        )
+        self.assertEqual(self.holidays[date(2009, 10, 3)], "Chinese " + "Mid-Autumn Festival")
 
     def test_national_day(self):
         for year in [
@@ -337,9 +322,7 @@ class TestHongKong(unittest.TestCase):
             (2018, 10, 17),
             (2019, 10, 7),
         ]:
-            self.assertEqual(
-                self.holidays[date(year, month, day)], "Chung " + "Yeung Festival"
-            )
+            self.assertEqual(self.holidays[date(year, month, day)], "Chung " + "Yeung Festival")
 
         name = "The day following Chung Yeung Festival"
         self.assertEqual(self.holidays[date(2013, 10, 14)], name)

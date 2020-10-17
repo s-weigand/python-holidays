@@ -16,8 +16,7 @@ from datetime import date
 from dateutil.easter import easter
 from dateutil.relativedelta import relativedelta as rd, FR
 
-from holidays.constants import JAN, MAY, JUN, JUL, AUG, SEP, OCT, \
-    NOV, DEC
+from holidays.constants import JAN, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC
 from holidays.constants import WED, THU
 from holidays.holiday_base import HolidayBase
 
@@ -27,7 +26,7 @@ class Chile(HolidayBase):
     # https://es.wikipedia.org/wiki/Anexo:D%C3%ADas_feriados_en_Chile
 
     def __init__(self, **kwargs):
-        self.country = 'CL'
+        self.country = "CL"
         HolidayBase.__init__(self, **kwargs)
 
     def _populate(self, year):
@@ -36,7 +35,7 @@ class Chile(HolidayBase):
 
         # Holy Week
         name_fri = "Semana Santa (Viernes Santo)  [Holy day (Holy Friday)]"
-        name_easter = 'Día de Pascuas [Easter Day]'
+        name_easter = "Día de Pascuas [Easter Day]"
 
         self[easter(year) + rd(weekday=FR(-1))] = name_fri
         self[easter(year)] = name_easter
@@ -66,8 +65,7 @@ class Chile(HolidayBase):
         self[date(year, SEP, 18)] = name
 
         # Day of Glories of the Army of Chile
-        name = "Día de las Glorias del Ejército de Chile [Day of " \
-               "Glories of the Army of Chile]"
+        name = "Día de las Glorias del Ejército de Chile [Day of " "Glories of the Army of Chile]"
         self[date(year, SEP, 19)] = name
         # National Holidays Ley 20.215
         name = "Fiestas Patrias [National Holidays]"
@@ -78,15 +76,17 @@ class Chile(HolidayBase):
         if year < 2010:
             self[date(year, OCT, 12)] = "Día de la Raza [Columbus day]"
         else:
-            self[date(year, OCT, 12)] = "Día del Respeto a la Diversidad"\
-                                        " [Day of the Meeting " \
-                                        " of Two Worlds]"
+            self[date(year, OCT, 12)] = (
+                "Día del Respeto a la Diversidad" " [Day of the Meeting " " of Two Worlds]"
+            )
 
         # National Day of the Evangelical and Protestant Churches
-        name = "Día Nacional de las Iglesias Evangélicas y Protestantes " \
-               " [National Day of the " \
-               " Evangelical and " \
-               " Protestant Churches]"
+        name = (
+            "Día Nacional de las Iglesias Evangélicas y Protestantes "
+            " [National Day of the "
+            " Evangelical and "
+            " Protestant Churches]"
+        )
         self[date(year, OCT, 31)] = name
 
         # All Saints Day
@@ -94,8 +94,7 @@ class Chile(HolidayBase):
         self[date(year, NOV, 1)] = name
 
         # Immaculate Conception
-        self[date(year, DEC, 8)] = "La Inmaculada Concepción" \
-                                   " [Immaculate Conception]"
+        self[date(year, DEC, 8)] = "La Inmaculada Concepción" " [Immaculate Conception]"
 
         # Christmas
         self[date(year, DEC, 25)] = "Navidad [Christmas]"

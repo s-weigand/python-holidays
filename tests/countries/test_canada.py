@@ -321,9 +321,7 @@ class TestCA(unittest.TestCase):
             self.assertIn(dt, self.holidays)
             self.assertNotIn(dt + relativedelta(days=-1), self.holidays)
         self.assertNotIn(date(2010, 12, 24), self.holidays)
-        self.assertNotEqual(
-            self.holidays[date(2011, 12, 26)], "Christmas Day (Observed)"
-        )
+        self.assertNotEqual(self.holidays[date(2011, 12, 26)], "Christmas Day (Observed)")
         self.holidays.observed = True
         self.assertIn(date(2010, 12, 24), self.holidays)
         self.assertEqual(self.holidays[date(2011, 12, 26)], "Christmas Day (Observed)")

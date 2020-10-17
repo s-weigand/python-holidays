@@ -58,9 +58,7 @@ class TestHungary(unittest.TestCase):
             self.assertIn(date(year, 11, 1), self.holidays)
 
     def test_additional_day_off(self):
-        observed_days_off = holidays.HU(
-            observed=True, years=range(2010, self.next_year)
-        )
+        observed_days_off = holidays.HU(observed=True, years=range(2010, self.next_year))
         for day in [
             date(2010, 12, 24),
             date(2011, 3, 14),

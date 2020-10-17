@@ -62,4 +62,3 @@ class TestIE(unittest.TestCase):
         self.assertIn("2017-12-26", self.irish_holidays)
         self.assertIn("2018-12-25", self.irish_holidays)
         self.assertIn("2018-12-26", self.irish_holidays)
-

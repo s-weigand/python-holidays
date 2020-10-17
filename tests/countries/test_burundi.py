@@ -23,18 +23,14 @@ class TestBurundi(unittest.TestCase):
 
     def test_rwagasore_day(self):
         self.assertIn("Prince Louis Rwagasore Day", self.holidays[date(2017, 10, 13)])
-        self.assertIn(
-            "Prince Louis Rwagasore Day (Observed)", self.holidays[date(2024, 10, 14)]
-        )
+        self.assertIn("Prince Louis Rwagasore Day (Observed)", self.holidays[date(2024, 10, 14)])
 
     def test_ntaryamira_day(self):
         self.assertIn("President Ntaryamira Day", self.holidays[date(2017, 4, 6)])
 
     def test_ndadaye_day(self):
         self.assertIn("President Ndadaye's Day", self.holidays[date(2017, 10, 21)])
-        self.assertIn(
-            "President Ndadaye's Day (Observed)", self.holidays[date(2018, 10, 22)]
-        )
+        self.assertIn("President Ndadaye's Day (Observed)", self.holidays[date(2018, 10, 22)])
 
     def test_independence_day(self):
         for year in range(1962, 2050):

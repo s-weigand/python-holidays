@@ -8,9 +8,7 @@ import holidays
 class TestSwitzerland(unittest.TestCase):
     def setUp(self):
         self.holidays = holidays.CH()
-        self.prov_hols = dict(
-            (prov, holidays.CH(prov=prov)) for prov in holidays.CH.PROVINCES
-        )
+        self.prov_hols = dict((prov, holidays.CH(prov=prov)) for prov in holidays.CH.PROVINCES)
 
     def test_all_holidays_present(self):
         ch_2018 = sum(holidays.CH(years=[2018], prov=p) for p in holidays.CH.PROVINCES)

@@ -53,9 +53,7 @@ class TestKorea(unittest.TestCase):
             (2027, 2, 7),
             (2028, 1, 27),
         ]:
-            self.assertEqual(
-                self.holidays[date(year, month, day)], "Lunar New Year's Day"
-            )
+            self.assertEqual(self.holidays[date(year, month, day)], "Lunar New Year's Day")
 
         for year, month, day in [
             (2006, 1, 30),
@@ -103,9 +101,7 @@ class TestKorea(unittest.TestCase):
             (2019, 3, 1),
             (2020, 3, 1),
         ]:
-            self.assertEqual(
-                self.holidays[date(year, month, day)], "Independence Movement Day"
-            )
+            self.assertEqual(self.holidays[date(year, month, day)], "Independence Movement Day")
 
         self.assertEqual(
             self.holidays[date(2020, 3, 2)],
@@ -175,9 +171,7 @@ class TestKorea(unittest.TestCase):
             self.assertEqual(self.holidays[date(year, month, day)], name)
 
         for year, month, day in [(2001, 5, 1)]:
-            self.assertIn(
-                "Birthday of the Buddha", self.holidays[date(year, month, day)]
-            )
+            self.assertIn("Birthday of the Buddha", self.holidays[date(year, month, day)])
 
     def test_labour_day(self):
         for year in [
@@ -248,14 +242,10 @@ class TestKorea(unittest.TestCase):
             (2029, 9, 21),
             (2030, 9, 11),
         ]:
-            self.assertEqual(
-                self.holidays[date(year, month, day)], "The day preceding of Chuseok"
-            )
+            self.assertEqual(self.holidays[date(year, month, day)], "The day preceding of Chuseok")
 
         for year, month, day in [(2017, 10, 3)]:
-            self.assertIn(
-                "The day preceding of Chuseok", self.holidays[date(year, month, day)]
-            )
+            self.assertIn("The day preceding of Chuseok", self.holidays[date(year, month, day)])
 
         for year, month, day in [
             (1942, 9, 25),
@@ -310,9 +300,7 @@ class TestKorea(unittest.TestCase):
             (2029, 9, 23),
             (2030, 9, 13),
         ]:
-            self.assertEqual(
-                self.holidays[date(year, month, day)], "The second day of Chuseok"
-            )
+            self.assertEqual(self.holidays[date(year, month, day)], "The second day of Chuseok")
 
         for year, month, day in [
             (2014, 9, 10),
@@ -329,13 +317,9 @@ class TestKorea(unittest.TestCase):
     def test_national_foundation_day(self):
         for year in range(1948, 2050):
             if year in [1952, 1963, 1971, 1990, 2009, 2017, 2028, 2036, 2039, 2047]:
-                self.assertIn(
-                    "National Foundation Day", self.holidays[date(year, 10, 3)]
-                )
+                self.assertIn("National Foundation Day", self.holidays[date(year, 10, 3)])
             else:
-                self.assertEqual(
-                    self.holidays[date(year, 10, 3)], "National Foundation Day"
-                )
+                self.assertEqual(self.holidays[date(year, 10, 3)], "National Foundation Day")
 
     def test_hangeul_day(self):
         for year in range(1948, 2007):

@@ -8,9 +8,7 @@ import holidays
 class TestDE(unittest.TestCase):
     def setUp(self):
         self.holidays = holidays.DE()
-        self.prov_hols = {
-            prov: holidays.DE(prov=prov) for prov in holidays.DE.PROVINCES
-        }
+        self.prov_hols = {prov: holidays.DE(prov=prov) for prov in holidays.DE.PROVINCES}
 
     def test_no_data_before_1990(self):
         de_1989 = sum(holidays.DE(years=[1989], prov=p) for p in holidays.DE.PROVINCES)

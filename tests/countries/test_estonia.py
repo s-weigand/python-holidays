@@ -8,9 +8,7 @@ import holidays
 class TestES(unittest.TestCase):
     def setUp(self):
         self.holidays = holidays.ES()
-        self.prov_holidays = {
-            prov: holidays.ES(prov=prov) for prov in holidays.ES.PROVINCES
-        }
+        self.prov_holidays = {prov: holidays.ES(prov=prov) for prov in holidays.ES.PROVINCES}
 
     def test_fixed_holidays(self):
         fixed_days_whole_country = (
@@ -29,12 +27,8 @@ class TestES(unittest.TestCase):
 
     def test_variable_days_in_2016(self):
         for prov, prov_holidays in self.prov_holidays.items():
-            self.assertEqual(
-                date(2016, 3, 24) in prov_holidays, prov not in ["CT", "VC"]
-            )
-            self.assertEqual(
-                date(2016, 3, 25) in prov_holidays, prov not in ["CT", "VC"]
-            )
+            self.assertEqual(date(2016, 3, 24) in prov_holidays, prov not in ["CT", "VC"])
+            self.assertEqual(date(2016, 3, 25) in prov_holidays, prov not in ["CT", "VC"])
             self.assertEqual(
                 date(2016, 3, 28) in prov_holidays,
                 prov in ["CT", "PV", "NC", "VC", "IB", "CM"],
@@ -57,9 +51,7 @@ class TestES(unittest.TestCase):
         }
         for prov, prov_holidays in self.prov_holidays.items():
             for year in range(2010, 2025):
-                self.assertEqual(
-                    date(year, 12, 26) in prov_holidays, prov in ["CT", "IB"]
-                )
+                self.assertEqual(date(year, 12, 26) in prov_holidays, prov in ["CT", "IB"])
                 if year < 2015:
                     self.assertEqual(
                         date(year, 3, 19) in prov_holidays,
@@ -100,13 +92,9 @@ class TestES(unittest.TestCase):
                         date(year, 3, 19) in prov_holidays,
                         prov in ["CM", "GA", "MC", "NC", "PV", "VC"],
                     )
-                self.assertEqual(
-                    date(year, 6, 24) in prov_holidays, prov in ["CT", "GA", "VC"]
-                )
+                self.assertEqual(date(year, 6, 24) in prov_holidays, prov in ["CT", "GA", "VC"])
                 for fest_day, fest_prov in province_days.items():
-                    self.assertEqual(
-                        date(year, *fest_day) in prov_holidays, prov in fest_prov
-                    )
+                    self.assertEqual(date(year, *fest_day) in prov_holidays, prov in fest_prov)
 
 
 class TestEstonia(unittest.TestCase):

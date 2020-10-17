@@ -131,10 +131,5 @@ class TestJapan(unittest.TestCase):
         self.assertIn(date(2019, 10, 22), self.holidays)
 
     def test_invalid_years(self):
-        self.assertRaises(
-            NotImplementedError, lambda: date(1948, 1, 1) in self.holidays
-        )
-        self.assertRaises(
-            NotImplementedError, lambda: date(2100, 1, 1) in self.holidays
-        )
-
+        self.assertRaises(NotImplementedError, lambda: date(1948, 1, 1) in self.holidays)
+        self.assertRaises(NotImplementedError, lambda: date(2100, 1, 1) in self.holidays)

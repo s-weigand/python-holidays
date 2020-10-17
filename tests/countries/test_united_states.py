@@ -97,9 +97,7 @@ class TestUS(unittest.TestCase):
             self.assertIn(dt, self.holidays)
             self.assertNotIn(dt + relativedelta(days=-1), self.holidays)
             self.assertNotIn(dt + relativedelta(days=+1), self.holidays)
-        self.assertNotIn(
-            "Martin Luther King Jr. Day", holidays.US(years=[1985]).values()
-        )
+        self.assertNotIn("Martin Luther King Jr. Day", holidays.US(years=[1985]).values())
         self.assertIn("Martin Luther King Jr. Day", holidays.US(years=[1986]).values())
         self.assertEqual(
             holidays.US(state="AL").get("2015-01-19"),
@@ -129,9 +127,7 @@ class TestUS(unittest.TestCase):
             holidays.US(state="ID").get("2000-01-17"),
             "Martin Luther King Jr. - Idaho Human Rights Day",
         )
-        self.assertEqual(
-            holidays.US(state="GA").get("2011-01-17"), "Robert E. Lee's Birthday"
-        )
+        self.assertEqual(holidays.US(state="GA").get("2011-01-17"), "Robert E. Lee's Birthday")
 
     def test_lincolns_birthday(self):
         ca_holidays = holidays.US(state="CA")
@@ -376,9 +372,7 @@ class TestUS(unittest.TestCase):
         for dt in [date(1949, 3, 25), date(2016, 3, 25), date(2017, 3, 27)]:
             self.assertNotIn(dt, self.holidays)
             self.assertIn(dt, hi_holidays)
-            self.assertEqual(
-                hi_holidays.get(dt), "Prince Jonah Kuhio Kalanianaole Day (Observed)"
-            )
+            self.assertEqual(hi_holidays.get(dt), "Prince Jonah Kuhio Kalanianaole Day (Observed)")
         hi_holidays.observed = False
         for dt in [date(1949, 3, 25), date(2016, 3, 25), date(2017, 3, 27)]:
             self.assertNotIn(dt, hi_holidays)
@@ -744,15 +738,11 @@ class TestUS(unittest.TestCase):
             "Bennington Battle Day (Observed)", vt_holidays.get_list(date(1997, 8, 15))
         )
         vt_holidays.observed = True
-        self.assertIn(
-            "Bennington Battle Day (Observed)", vt_holidays.get_list(date(1997, 8, 15))
-        )
+        self.assertIn("Bennington Battle Day (Observed)", vt_holidays.get_list(date(1997, 8, 15)))
         self.assertNotIn(
             "Bennington Battle Day (Observed)", vt_holidays.get_list(date(1997, 8, 17))
         )
-        self.assertIn(
-            "Bennington Battle Day (Observed)", vt_holidays.get_list(date(1998, 8, 17))
-        )
+        self.assertIn("Bennington Battle Day (Observed)", vt_holidays.get_list(date(1998, 8, 17)))
         self.assertNotIn(
             "Bennington Battle Day (Observed)", vt_holidays.get_list(date(1999, 8, 15))
         )
@@ -809,9 +799,7 @@ class TestUS(unittest.TestCase):
             self.assertNotIn(dt + relativedelta(days=-1), self.holidays)
             self.assertNotIn(dt + relativedelta(days=+1), self.holidays)
             self.assertEqual(sd_holidays.get(dt), "Native American Day")
-            self.assertEqual(
-                vi_holidays.get(dt), "Columbus Day and Puerto Rico Friendship Day"
-            )
+            self.assertEqual(vi_holidays.get(dt), "Columbus Day and Puerto Rico Friendship Day")
         self.assertNotIn(date(1936, 10, 12), self.holidays)
 
     def test_alaska_day(self):
@@ -842,12 +830,8 @@ class TestUS(unittest.TestCase):
         self.assertIn("Nevada Day (Observed)", nv_holidays.get_list(date(1998, 10, 30)))
         self.assertIn("Nevada Day (Observed)", nv_holidays.get_list(date(1999, 11, 1)))
         nv_holidays.observed = False
-        self.assertNotIn(
-            "Nevada Day (Observed)", nv_holidays.get_list(date(1998, 10, 30))
-        )
-        self.assertNotIn(
-            "Nevada Day (Observed)", nv_holidays.get_list(date(1999, 11, 1))
-        )
+        self.assertNotIn("Nevada Day (Observed)", nv_holidays.get_list(date(1998, 10, 30)))
+        self.assertNotIn("Nevada Day (Observed)", nv_holidays.get_list(date(1999, 11, 1)))
 
     def test_liberty_day(self):
         vi_holidays = holidays.US(state="VI")
@@ -995,18 +979,14 @@ class TestUS(unittest.TestCase):
                 "Friday After Thanksgiving",
             )
             self.assertEqual(nv_holidays.get(dt + relativedelta(days=+1)), "Family Day")
-            self.assertEqual(
-                nm_holidays.get(dt + relativedelta(days=+1)), "Presidents' Day"
-            )
+            self.assertEqual(nm_holidays.get(dt + relativedelta(days=+1)), "Presidents' Day")
             if dt.year >= 2008:
                 self.assertEqual(
                     md_holidays.get(dt + relativedelta(days=1)),
                     "American Indian Heritage Day",
                 )
             if dt.year >= 2010:
-                self.assertEqual(
-                    in_holidays.get(dt + relativedelta(days=1)), "Lincoln's Birthday"
-                )
+                self.assertEqual(in_holidays.get(dt + relativedelta(days=1)), "Lincoln's Birthday")
             else:
                 self.assertNotEqual(
                     in_holidays.get(dt + relativedelta(days=1)), "Lincoln's Birthday"
@@ -1076,24 +1056,12 @@ class TestUS(unittest.TestCase):
         self.assertIn(date(2016, 12, 23), nc_holidays)
         self.assertIn(date(2016, 12, 23), tx_holidays)
         self.assertIn(date(2016, 12, 23), wi_holidays)
-        self.assertIn(
-            "Christmas Eve (Observed)", as_holidays.get_list(date(2017, 12, 22))
-        )
-        self.assertIn(
-            "Christmas Eve (Observed)", ks_holidays.get_list(date(2017, 12, 22))
-        )
-        self.assertIn(
-            "Christmas Eve (Observed)", mi_holidays.get_list(date(2017, 12, 22))
-        )
-        self.assertIn(
-            "Christmas Eve (Observed)", nc_holidays.get_list(date(2017, 12, 22))
-        )
-        self.assertIn(
-            "Christmas Eve (Observed)", tx_holidays.get_list(date(2017, 12, 22))
-        )
-        self.assertIn(
-            "Christmas Eve (Observed)", wi_holidays.get_list(date(2017, 12, 22))
-        )
+        self.assertIn("Christmas Eve (Observed)", as_holidays.get_list(date(2017, 12, 22)))
+        self.assertIn("Christmas Eve (Observed)", ks_holidays.get_list(date(2017, 12, 22)))
+        self.assertIn("Christmas Eve (Observed)", mi_holidays.get_list(date(2017, 12, 22)))
+        self.assertIn("Christmas Eve (Observed)", nc_holidays.get_list(date(2017, 12, 22)))
+        self.assertIn("Christmas Eve (Observed)", tx_holidays.get_list(date(2017, 12, 22)))
+        self.assertIn("Christmas Eve (Observed)", wi_holidays.get_list(date(2017, 12, 22)))
 
     def test_christmas_day(self):
         for year in range(1900, 2100):
@@ -1115,12 +1083,8 @@ class TestUS(unittest.TestCase):
         self.assertNotIn(date(2015, 12, 28), tx_holidays)
         self.assertNotIn(date(2016, 12, 27), tx_holidays)
         nc_holidays.observed = True
-        self.assertIn(
-            "Day After Christmas (Observed)", nc_holidays.get_list(date(2015, 12, 28))
-        )
-        self.assertIn(
-            "Day After Christmas (Observed)", nc_holidays.get_list(date(2016, 12, 27))
-        )
+        self.assertIn("Day After Christmas (Observed)", nc_holidays.get_list(date(2015, 12, 28)))
+        self.assertIn("Day After Christmas (Observed)", nc_holidays.get_list(date(2016, 12, 27)))
         tx_holidays.observed = True
         self.assertNotIn(
             "Day After Christmas (Observed)", tx_holidays.get_list(date(2015, 12, 28))

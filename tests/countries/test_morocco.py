@@ -4,6 +4,7 @@ import sys
 
 import holidays
 
+
 class TestMorocco(unittest.TestCase):
     def setUp(self):
         self.holidays = holidays.Morocco()
