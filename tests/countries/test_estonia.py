@@ -11,16 +11,10 @@
 #  Website: https://github.com/dr-prodigy/python-holidays
 #  License: MIT (see LICENSE file)
 
-import os
-import sys
 import unittest
-import warnings
-from glob import glob
 from itertools import product
 
-from datetime import date, datetime, timedelta
-from dateutil.relativedelta import relativedelta, MO
-from flake8.api import legacy as flake8
+from datetime import date, datetime
 
 import holidays
 
@@ -128,7 +122,9 @@ class TestES(unittest.TestCase):
                         prov in ["ML", "MC", "PV", "VC"],
                     )
                 elif year == 2017:
-                    self.assertEqual(date(year, 3, 19) in prov_holidays, prov in ["PV"])
+                    self.assertEqual(
+                        date(year, 3, 19) in prov_holidays, prov in ["PV"]
+                    )
                 elif 2018 <= year <= 2019:
                     self.assertEqual(
                         date(year, 3, 19) in prov_holidays,
@@ -140,11 +136,13 @@ class TestES(unittest.TestCase):
                         prov in ["CM", "GA", "MC", "NC", "PV", "VC"],
                     )
                 self.assertEqual(
-                    date(year, 6, 24) in prov_holidays, prov in ["CT", "GA", "VC"]
+                    date(year, 6, 24) in prov_holidays,
+                    prov in ["CT", "GA", "VC"],
                 )
                 for fest_day, fest_prov in province_days.items():
                     self.assertEqual(
-                        date(year, *fest_day) in prov_holidays, prov in fest_prov
+                        date(year, *fest_day) in prov_holidays,
+                        prov in fest_prov,
                     )
 
 
@@ -170,7 +168,9 @@ class TestEstonia(unittest.TestCase):
 
     def test_easter_sunday(self):
         test_date = date(2019, 4, 21)
-        self.assertEqual(self.holidays.get(test_date), "ülestõusmispühade 1. püha")
+        self.assertEqual(
+            self.holidays.get(test_date), "ülestõusmispühade 1. püha"
+        )
         self.assertIn(test_date, self.holidays)
 
     def test_spring_day(self):
@@ -212,4 +212,3 @@ class TestEstonia(unittest.TestCase):
         test_date = date(self.cur_date.year, 12, 26)
         self.assertEqual(self.holidays.get(test_date), "teine jõulupüha")
         self.assertIn(test_date, self.holidays)
-
