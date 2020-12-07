@@ -25,8 +25,6 @@ from flake8.api import legacy as flake8
 import holidays
 
 
-
-
 class TestMX(unittest.TestCase):
     def setUp(self):
         self.holidays = holidays.MX(observed=False)

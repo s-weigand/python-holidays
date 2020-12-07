@@ -75,19 +75,10 @@ class TestAT(unittest.TestCase):
     def test_all_holidays_present(self):
         at_2015 = holidays.AT(years=[2015])
         all_holidays = [
-            "Neujahr",
-            "Heilige Drei Könige",
-            "Ostermontag",
-            "Staatsfeiertag",
-            "Christi Himmelfahrt",
-            "Pfingstmontag",
-            "Fronleichnam",
-            "Mariä Himmelfahrt",
-            "Nationalfeiertag",
-            "Allerheiligen",
-            "Mariä Empfängnis",
-            "Christtag",
-            "Stefanitag",
+            "Neujahr", "Heilige Drei Könige", "Ostermontag", "Staatsfeiertag",
+            "Christi Himmelfahrt", "Pfingstmontag", "Fronleichnam",
+            "Mariä Himmelfahrt", "Nationalfeiertag", "Allerheiligen",
+            "Mariä Empfängnis", "Christtag", "Stefanitag",
         ]
         for holiday in all_holidays:
             self.assertIn(holiday, at_2015.values())

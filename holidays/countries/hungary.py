@@ -44,7 +44,8 @@ class Hungary(HolidayBase):
         # National Day
         if 1945 <= year <= 1950 or 1989 <= year:
             self._add_with_observed_day_off(
-                date(year, MAR, 15), "Nemzeti ünnep")
+                date(year, MAR, 15), "Nemzeti ünnep"
+            )
 
         # Soviet era
         if 1950 <= year <= 1989:
@@ -81,7 +82,8 @@ class Hungary(HolidayBase):
         # International Workers' Day
         if 1946 <= year:
             self._add_with_observed_day_off(
-                date(year, MAY, 1), "A Munka ünnepe")
+                date(year, MAY, 1), "A Munka ünnepe"
+            )
         if 1950 <= year <= 1953:
             self[date(year, MAY, 2)] = "A Munka ünnepe"
 
@@ -90,17 +92,20 @@ class Hungary(HolidayBase):
             self[date(year, AUG, 20)] = "A kenyér ünnepe"
         else:
             self._add_with_observed_day_off(
-                date(year, AUG, 20), "Az államalapítás ünnepe")
+                date(year, AUG, 20), "Az államalapítás ünnepe"
+            )
 
         # National Day
         if 1991 <= year:
             self._add_with_observed_day_off(
-                date(year, OCT, 23), "Nemzeti ünnep")
+                date(year, OCT, 23), "Nemzeti ünnep"
+            )
 
         # All Saints' Day
         if 1999 <= year:
             self._add_with_observed_day_off(
-                date(year, NOV, 1), "Mindenszentek")
+                date(year, NOV, 1), "Mindenszentek"
+            )
 
         # Christmas Eve is not endorsed officially
         # but nowadays it is usually a day off work
@@ -114,16 +119,21 @@ class Hungary(HolidayBase):
         # Second christmas
         if 1955 != year:
             self._add_with_observed_day_off(
-                date(year, DEC, 26), "Karácsony másnapja", since=2013,
-                before=False, after=True)
+                date(year, DEC, 26),
+                "Karácsony másnapja",
+                since=2013,
+                before=False,
+                after=True
+            )
 
         # New Year's Eve
         if self.observed and 2014 <= year \
                 and date(year, DEC, 31).weekday() == MON:
             self[date(year, DEC, 31)] = "Szilveszter"
 
-    def _add_with_observed_day_off(self, day, desc, since=2010,
-                                   before=True, after=True):
+    def _add_with_observed_day_off(
+        self, day, desc, since=2010, before=True, after=True
+    ):
         # Swapped days off were in place earlier but
         # I haven't found official record yet.
         self[day] = desc

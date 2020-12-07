@@ -186,8 +186,10 @@ class Korea(HolidayBase):
     # convert lunar calendar date to solar
     def get_solar_date(self, year, month, day):
         self.korean_cal.setLunarDate(year, month, day, False)
-        return date(self.korean_cal.solarYear, self.korean_cal.solarMonth,
-                    self.korean_cal.solarDay)
+        return date(
+            self.korean_cal.solarYear, self.korean_cal.solarMonth,
+            self.korean_cal.solarDay
+        )
 
     def first_lower(self, s):
         return s[0].lower() + s[1:]

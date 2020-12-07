@@ -78,4 +78,3 @@ class TestEgypt(unittest.TestCase):
                 self.assertIn(date(2010, 11, 15), self.holidays)
                 # muhammad's birthday
                 self.assertIn(date(2010, 2, 26), self.holidays)
-

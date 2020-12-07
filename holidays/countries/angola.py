@@ -16,14 +16,12 @@ from datetime import date
 from dateutil.easter import easter
 from dateutil.relativedelta import relativedelta as rd
 
-
 from holidays.constants import TUE, THU, SUN
 from holidays.constants import FEB, MAR, APR, MAY, SEP, NOV, DEC
 from holidays.holiday_base import HolidayBase
 
 
 class Angola(HolidayBase):
-
     def __init__(self, **kwargs):
         # https://www.officeholidays.com/countries/angola/
         # https://www.timeanddate.com/holidays/angola/

@@ -126,4 +126,3 @@ class TestSweden(unittest.TestCase):
         self.assertNotIn("2017-02-10", self.holidays_with_sundays)
         self.assertNotIn("2016-12-27", self.holidays_with_sundays)
         self.assertNotIn("2016-12-28", self.holidays_with_sundays)
-

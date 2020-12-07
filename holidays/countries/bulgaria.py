@@ -39,7 +39,6 @@ class Bulgaria(HolidayBase):
     Sources (English):
     - https://en.wikipedia.org/wiki/Public_holidays_in_Bulgaria
     """
-
     def __init__(self, **kwargs):
         self.country = 'BG'
         HolidayBase.__init__(self, **kwargs)

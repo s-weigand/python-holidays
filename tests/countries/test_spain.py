@@ -25,7 +25,6 @@ from flake8.api import legacy as flake8
 import holidays
 
 
-
 class TestES(unittest.TestCase):
     def setUp(self):
         self.holidays = holidays.ES(observed=False)
@@ -37,30 +36,16 @@ class TestES(unittest.TestCase):
 
     def test_fixed_holidays(self):
         fixed_days_whole_country = (
-            (1, 1),
-            (1, 6),
-            (5, 1),
-            (8, 15),
-            (10, 12),
-            (11, 1),
-            (12, 6),
-            (12, 8),
-            (12, 25),
+            (1, 1), (1, 6), (5, 1), (8, 15), (10, 12), (11, 1), (12, 6),
+            (12, 8), (12, 25),
         )
         for y, (m, d) in product(range(1950, 2050), fixed_days_whole_country):
             self.assertIn(date(y, m, d), self.holidays)
 
     def test_fixed_holidays_observed(self):
         fixed_days_whole_country = (
-            (1, 1),
-            (1, 6),
-            (5, 1),
-            (8, 15),
-            (10, 12),
-            (11, 2),
-            (12, 7),
-            (12, 8),
-            (12, 25),
+            (1, 1), (1, 6), (5, 1), (8, 15), (10, 12), (11, 2), (12, 7),
+            (12, 8), (12, 25),
         )
         for (m, d) in fixed_days_whole_country:
             self.assertIn(date(2020, m, d), self.holidays_observed)
@@ -74,8 +59,8 @@ class TestES(unittest.TestCase):
                 date(2016, 3, 25) in prov_holidays, prov not in ["CT", "VC"]
             )
             self.assertEqual(
-                date(2016, 3, 28) in prov_holidays,
-                prov in ["CT", "PV", "NC", "VC", "IB", "CM"],
+                date(2016, 3, 28) in prov_holidays, prov
+                in ["CT", "PV", "NC", "VC", "IB", "CM"],
             )
 
     def test_province_specific_days(self):
@@ -102,48 +87,41 @@ class TestES(unittest.TestCase):
                 )
                 if year < 2015:
                     self.assertEqual(
-                        date(year, 3, 19) in prov_holidays,
-                        prov
-                        in [
-                            "AR",
-                            "CL",
-                            "CM",
-                            "EX",
-                            "GA",
-                            "MD",
-                            "ML",
-                            "MC",
-                            "NC",
-                            "PV",
-                            "VC",
+                        date(year, 3, 19) in prov_holidays, prov in [
+                            "AR", "CL", "CM", "EX", "GA", "MD", "ML", "MC",
+                            "NC", "PV", "VC",
                         ],
                     )
                 elif year == 2015:
                     self.assertEqual(
-                        date(year, 3, 19) in prov_holidays,
-                        prov in ["CM", "MD", "ML", "MC", "NC", "PV", "VC"],
+                        date(year, 3, 19) in prov_holidays, prov
+                        in ["CM", "MD", "ML", "MC", "NC", "PV", "VC"],
                     )
                 elif year == 2016:
                     self.assertEqual(
-                        date(year, 3, 19) in prov_holidays,
-                        prov in ["ML", "MC", "PV", "VC"],
+                        date(year, 3, 19) in prov_holidays, prov
+                        in ["ML", "MC", "PV", "VC"],
                     )
                 elif year == 2017:
-                    self.assertEqual(date(year, 3, 19) in prov_holidays, prov in ["PV"])
+                    self.assertEqual(
+                        date(year, 3, 19) in prov_holidays, prov in ["PV"]
+                    )
                 elif 2018 <= year <= 2019:
                     self.assertEqual(
-                        date(year, 3, 19) in prov_holidays,
-                        prov in ["GA", "MC", "NC", "PV", "VC"],
+                        date(year, 3, 19) in prov_holidays, prov
+                        in ["GA", "MC", "NC", "PV", "VC"],
                     )
                 elif year == 2020:
                     self.assertEqual(
-                        date(year, 3, 19) in prov_holidays,
-                        prov in ["CM", "GA", "MC", "NC", "PV", "VC"],
+                        date(year, 3, 19) in prov_holidays, prov
+                        in ["CM", "GA", "MC", "NC", "PV", "VC"],
                     )
                 self.assertEqual(
-                    date(year, 6, 24) in prov_holidays, prov in ["CT", "GA", "VC"]
+                    date(year, 6, 24) in prov_holidays, prov
+                    in ["CT", "GA", "VC"]
                 )
                 for fest_day, fest_prov in province_days.items():
                     self.assertEqual(
-                        date(year, *fest_day) in prov_holidays, prov in fest_prov
+                        date(year, *fest_day) in prov_holidays, prov
+                        in fest_prov
                     )

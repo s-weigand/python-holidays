@@ -29,7 +29,8 @@ class TestFrance(unittest.TestCase):
     def setUp(self):
         self.holidays = holidays.France()
         self.prov_holidays = {
-            prov: holidays.FR(prov=prov) for prov in holidays.FRA.PROVINCES
+            prov: holidays.FR(prov=prov)
+            for prov in holidays.FRA.PROVINCES
         }
 
     def test_2017(self):
@@ -43,7 +44,8 @@ class TestFrance(unittest.TestCase):
 
     def test_others(self):
         self.assertEqual(
-            self.holidays[date(1948, 5, 1)], "Fête du Travail et de la Concorde sociale"
+            self.holidays[date(1948, 5, 1)],
+            "Fête du Travail et de la Concorde sociale"
         )
 
     def test_alsace_moselle(self):
@@ -88,4 +90,3 @@ class TestFrance(unittest.TestCase):
     def test_la_reunion(self):
         am_holidays = self.prov_holidays["La Réunion"]
         self.assertIn(date(2017, 12, 20), am_holidays)
-

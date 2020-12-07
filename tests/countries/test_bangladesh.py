@@ -37,4 +37,3 @@ class TestBangladesh(unittest.TestCase):
         self.assertIn(date(2020, 5, 1), self.holidays)
         self.assertIn(date(2020, 8, 15), self.holidays)
         self.assertIn(date(2020, 12, 16), self.holidays)
-

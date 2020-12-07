@@ -35,7 +35,6 @@ class Sweden(HolidayBase):
     https://sv.wikipedia.org/wiki/Helgdagar_i_Sverige and
     http://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/lag-1989253-om-allmanna-helgdagar_sfs-1989-253
     """
-
     def __init__(self, include_sundays=True, **kwargs):
         """
         :param include_sundays: Whether to consider sundays as a holiday

@@ -72,4 +72,3 @@ class TestFinland(unittest.TestCase):
         self.assertIn(date(2018, 6, 22), self.holidays)
         self.assertEqual(self.holidays[date(2018, 6, 22)], "Juhannusaatto")
         self.assertEqual(self.holidays[date(2018, 6, 23)], "Juhannuspäivä")
-

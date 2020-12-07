@@ -23,17 +23,13 @@ from holidays.holiday_base import HolidayBase
 
 
 class Italy(HolidayBase):
-    PROVINCES = ['AN', 'AO', 'BA', 'BL', 'BO',
-                 'BZ', 'BS', 'CB', 'CT', 'Cesena',
-                 'CH', 'CS', 'KR', 'EN', 'FE', 'FI',
-                 'FC', 'Forli', 'FR', 'GE', 'GO', 'IS',
-                 'SP', 'LT', 'MN', 'MS', 'MI',
-                 'MO', 'MB', 'NA', 'PD', 'PA',
-                 'PR', 'PG', 'PE', 'PC', 'PI',
-                 'PD', 'PT', 'RA', 'RE',
-                 'RI', 'RN', 'RM', 'RO', 'SA',
-                 'SR', 'TE', 'TO', 'TS', 'Pesaro', 'PU',
-                 'Urbino', 'VE', 'VC', 'VI']
+    PROVINCES = [
+        'AN', 'AO', 'BA', 'BL', 'BO', 'BZ', 'BS', 'CB', 'CT', 'Cesena', 'CH',
+        'CS', 'KR', 'EN', 'FE', 'FI', 'FC', 'Forli', 'FR', 'GE', 'GO', 'IS',
+        'SP', 'LT', 'MN', 'MS', 'MI', 'MO', 'MB', 'NA', 'PD', 'PA', 'PR', 'PG',
+        'PE', 'PC', 'PI', 'PD', 'PT', 'RA', 'RE', 'RI', 'RN', 'RM', 'RO', 'SA',
+        'SR', 'TE', 'TO', 'TS', 'Pesaro', 'PU', 'Urbino', 'VE', 'VC', 'VI'
+    ]
 
     def __init__(self, **kwargs):
         self.country = 'IT'

@@ -25,7 +25,6 @@ class Belgium(HolidayBase):
     https://www.belgium.be/nl/over_belgie/land/belgie_in_een_notendop/feestdagen
     https://nl.wikipedia.org/wiki/Feestdagen_in_Belgi%C3%AB
     """
-
     def __init__(self, **kwargs):
         self.country = "BE"
         HolidayBase.__init__(self, **kwargs)

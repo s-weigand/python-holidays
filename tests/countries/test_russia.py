@@ -50,4 +50,3 @@ class TestRussia(unittest.TestCase):
         self.assertIn(date(2018, 6, 12), self.holidays)
         self.assertIn(date(2018, 11, 4), self.holidays)
         self.assertNotIn(date(2018, 11, 7), self.holidays)
-

@@ -25,8 +25,6 @@ from flake8.api import legacy as flake8
 import holidays
 
 
-
-
 class TestEstonia(unittest.TestCase):
     def setUp(self):
         self.holidays = holidays.EE()
@@ -49,7 +47,9 @@ class TestEstonia(unittest.TestCase):
 
     def test_easter_sunday(self):
         test_date = date(2019, 4, 21)
-        self.assertEqual(self.holidays.get(test_date), "ülestõusmispühade 1. püha")
+        self.assertEqual(
+            self.holidays.get(test_date), "ülestõusmispühade 1. püha"
+        )
         self.assertIn(test_date, self.holidays)
 
     def test_spring_day(self):
@@ -91,4 +91,3 @@ class TestEstonia(unittest.TestCase):
         test_date = date(self.cur_date.year, 12, 26)
         self.assertEqual(self.holidays.get(test_date), "teine jõulupüha")
         self.assertIn(test_date, self.holidays)
-

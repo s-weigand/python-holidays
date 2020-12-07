@@ -36,7 +36,6 @@ class Norway(HolidayBase):
     https://no.wikipedia.org/wiki/Helligdager_i_Norge
     https://www.timeanddate.no/merkedag/norge/
     """
-
     def __init__(self, include_sundays=True, **kwargs):
         """
 

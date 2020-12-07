@@ -25,7 +25,6 @@ class Belarus(HolidayBase):
     http://president.gov.by/en/holidays_en/
     http://www.belarus.by/en/about-belarus/national-holidays
     """
-
     def __init__(self, **kwargs):
         self.country = "BY"
         HolidayBase.__init__(self, **kwargs)

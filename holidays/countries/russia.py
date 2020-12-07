@@ -21,7 +21,6 @@ class Russia(HolidayBase):
     """
     https://en.wikipedia.org/wiki/Public_holidays_in_Russia
     """
-
     def __init__(self, **kwargs):
         self.country = "RU"
         HolidayBase.__init__(self, **kwargs)

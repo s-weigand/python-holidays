@@ -36,10 +36,11 @@ class France(HolidayBase):
         https://www.service-public.fr/particuliers/vosdroits/F2405
     """
 
-    PROVINCES = ['Métropole', 'Alsace-Moselle', 'Guadeloupe', 'Guyane',
-                 'Martinique', 'Mayotte', 'Nouvelle-Calédonie', 'La Réunion',
-                 'Polynésie Française', 'Saint-Barthélémy', 'Saint-Martin',
-                 'Wallis-et-Futuna']
+    PROVINCES = [
+        'Métropole', 'Alsace-Moselle', 'Guadeloupe', 'Guyane', 'Martinique',
+        'Mayotte', 'Nouvelle-Calédonie', 'La Réunion', 'Polynésie Française',
+        'Saint-Barthélémy', 'Saint-Martin', 'Wallis-et-Futuna'
+    ]
 
     def __init__(self, **kwargs):
         self.country = 'FR'
@@ -67,8 +68,10 @@ class France(HolidayBase):
             self[date(year, NOV, 11)] = 'Armistice 1918'
 
         # Religious holidays
-        if self.prov in ['Alsace-Moselle', 'Guadeloupe', 'Guyane',
-                         'Martinique', 'Polynésie Française']:
+        if self.prov in [
+            'Alsace-Moselle', 'Guadeloupe', 'Guyane', 'Martinique',
+            'Polynésie Française'
+        ]:
             self[easter(year) - rd(days=2)] = 'Vendredi saint'
 
         if self.prov == 'Alsace-Moselle':

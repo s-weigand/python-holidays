@@ -11,7 +11,6 @@
 #  Website: https://github.com/dr-prodigy/python-holidays
 #  License: MIT (see LICENSE file)
 
-
 from convertdate import hebrew
 from datetime import date
 from dateutil.relativedelta import relativedelta as rd
@@ -52,7 +51,7 @@ class Israel(HolidayBase):
         if self.observed:
             day_in_week = date(year, month, day).weekday()
             if day_in_week in (2, 3):
-                observed_delta = - (day_in_week - 1)
+                observed_delta = -(day_in_week - 1)
             elif 2004 <= year and day_in_week == 5:
                 observed_delta = 1
 

@@ -136,30 +136,15 @@ class TestUK(unittest.TestCase):
             self.holidays[date(2011, 12, 26)], "Christmas Day (Observed)"
         )
         self.holidays.observed = True
-        self.assertEqual(self.holidays[date(2011, 12, 27)], "Christmas Day (Observed)")
+        self.assertEqual(
+            self.holidays[date(2011, 12, 27)], "Christmas Day (Observed)"
+        )
         for year, day in enumerate(
             [
-                25,
-                25,
-                25,
-                27,
-                27,  # 2001-05
-                25,
-                25,
-                25,
-                25,
-                27,  # 2006-10
-                27,
-                25,
-                25,
-                25,
-                25,  # 2011-15
-                27,
-                25,
-                25,
-                25,
-                25,
-                25,
+                25, 25, 25, 27, 27,  # 2001-05
+                25, 25, 25, 25, 27,  # 2006-10
+                27, 25, 25, 25, 25,  # 2011-15
+                27, 25, 25, 25, 25, 25,
             ],  # 2016-21
             2001,
         ):
@@ -181,29 +166,9 @@ class TestUK(unittest.TestCase):
         self.assertIn(date(2010, 12, 28), self.holidays)
         for year, day in enumerate(
             [
-                26,
-                26,
-                26,
-                28,
-                26,
-                26,
-                26,
-                26,
-                28,
-                28,
-                26,
-                26,
-                26,
-                26,
-                26,
-                26,
-                26,
-                26,
-                26,
-                26,
-                28,
-            ],
-            2001,
+                26, 26, 26, 28, 26, 26, 26, 26, 28, 28, 26, 26, 26, 26, 26, 26,
+                26, 26, 26, 26, 28,
+            ], 2001,
         ):
             dt = date(year, 12, day)
             self.assertIn(dt, self.holidays, dt)
@@ -212,13 +177,9 @@ class TestUK(unittest.TestCase):
     def test_all_holidays_present(self):
         uk_2015 = holidays.UK(years=[2015])
         all_holidays = [
-            "New Year's Day",
-            "Good Friday",
-            "Easter Monday [England, Wales, Northern Ireland]",
-            "May Day",
-            "Spring Bank Holiday",
-            "Christmas Day",
-            "Boxing Day",
+            "New Year's Day", "Good Friday",
+            "Easter Monday [England, Wales, Northern Ireland]", "May Day",
+            "Spring Bank Holiday", "Christmas Day", "Boxing Day",
         ]
         for holiday in all_holidays:
             self.assertIn(holiday, uk_2015.values())

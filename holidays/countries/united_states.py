@@ -26,12 +26,13 @@ from holidays.holiday_base import HolidayBase
 class UnitedStates(HolidayBase):
     # https://en.wikipedia.org/wiki/Public_holidays_in_the_United_States
 
-    STATES = ['AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL',
-              'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME',
-              'MD', 'MH', 'MA', 'MI', 'FM', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV',
-              'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW',
-              'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'VI',
-              'WA', 'WV', 'WI', 'WY']
+    STATES = [
+        'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA',
+        'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MH',
+        'MA', 'MI', 'FM', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM',
+        'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC',
+        'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'VI', 'WA', 'WV', 'WI', 'WY'
+    ]
 
     def __init__(self, **kwargs):
         self.country = 'US'
@@ -70,8 +71,7 @@ class UnitedStates(HolidayBase):
         # Lee Jackson Day
         name = "Lee Jackson Day"
         if self.state == 'VA' and year >= 2000:
-            dt = date(year, JAN, 1) + rd(weekday=MO(+3)) + rd(
-                weekday=FR(-1))
+            dt = date(year, JAN, 1) + rd(weekday=MO(+3)) + rd(weekday=FR(-1))
             self[dt] = name
         elif self.state == 'VA' and year >= 1983:
             self[date(year, JAN, 1) + rd(weekday=MO(+3))] = name
@@ -95,10 +95,12 @@ class UnitedStates(HolidayBase):
             name = "Martin Luther King Jr. Day"
             if self.state == 'AL':
                 name = "Robert E. Lee/Martin Luther King Birthday"
-            elif (self.state == 'MS') or ((self.state == 'AR') and
-                                          (year <= 2017)):
-                name = ("Dr. Martin Luther King Jr. "
-                        "and Robert E. Lee's Birthdays")
+            elif (self.state
+                  == 'MS') or ((self.state == 'AR') and (year <= 2017)):
+                name = (
+                    "Dr. Martin Luther King Jr. "
+                    "and Robert E. Lee's Birthdays"
+                )
             elif self.state in ('AZ', 'NH'):
                 name = "Dr. Martin Luther King Jr./Civil Rights Day"
             elif self.state == 'GA' and year < 2012:
@@ -230,8 +232,10 @@ class UnitedStates(HolidayBase):
             self[easter(year) + rd(weekday=TH(-1))] = "Holy Thursday"
 
         # Good Friday
-        if self.state in ('CT', 'DE', 'GU', 'IN', 'KY', 'LA',
-                          'NJ', 'NC', 'PR', 'TN', 'TX', 'VI'):
+        if self.state in (
+            'CT', 'DE', 'GU', 'IN', 'KY', 'LA', 'NJ', 'NC', 'PR', 'TN', 'TX',
+            'VI'
+        ):
             self[easter(year) + rd(weekday=FR(-1))] = "Good Friday"
 
         # Easter Monday

@@ -32,7 +32,6 @@ class Burundi(HolidayBase):
     Primary sources:
     https://www.officeholidays.com/countries/burundi
     """
-
     def __init__(self, **kwargs):
         self.country = 'BI'
         HolidayBase.__init__(self, **kwargs)

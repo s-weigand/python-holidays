@@ -56,8 +56,10 @@ class Germany(HolidayBase):
           both provinces.
     """
 
-    PROVINCES = ['BW', 'BY', 'BYP', 'BE', 'BB', 'HB', 'HH', 'HE', 'MV', 'NI',
-                 'NW', 'RP', 'SL', 'SN', 'ST', 'SH', 'TH']
+    PROVINCES = [
+        'BW', 'BY', 'BYP', 'BE', 'BB', 'HB', 'HH', 'HE', 'MV', 'NI', 'NW',
+        'RP', 'SL', 'SN', 'ST', 'SH', 'TH'
+    ]
 
     def __init__(self, **kwargs):
         self.country = 'DE'

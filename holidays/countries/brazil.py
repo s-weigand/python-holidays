@@ -26,9 +26,11 @@ class Brazil(HolidayBase):
     https://pt.wikipedia.org/wiki/Feriados_no_Brasil
     """
 
-    STATES = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT',
-              'MS', 'MG', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RS', 'RO',
-              'RR', 'SC', 'SP', 'SE', 'TO']
+    STATES = [
+        'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS',
+        'MG', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC',
+        'SP', 'SE', 'TO'
+    ]
 
     def __init__(self, **kwargs):
         self.country = 'BR'

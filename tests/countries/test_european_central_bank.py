@@ -89,12 +89,8 @@ class TestTAR(unittest.TestCase):
     def test_all_holidays_present(self):
         tar_2015 = holidays.TAR(years=[2015])
         all_holidays = [
-            "New Year's Day",
-            "Good Friday",
-            "Easter Monday",
-            "1 May (Labour Day)",
-            "Christmas Day",
-            "26 December",
+            "New Year's Day", "Good Friday", "Easter Monday",
+            "1 May (Labour Day)", "Christmas Day", "26 December",
         ]
         for holiday in all_holidays:
             self.assertIn(holiday, tar_2015.values())

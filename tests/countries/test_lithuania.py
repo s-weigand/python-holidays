@@ -82,4 +82,3 @@ class TestLithuania(unittest.TestCase):
     def test_day_of_dew(self):
         self.assertNotIn(date(2002, 6, 24), self.holidays)
         self.assertIn(date(2020, 6, 24), self.holidays)
-

@@ -102,8 +102,10 @@ class Australia(HolidayBase):
             if self.observed:
                 if apr25.weekday() == SAT and self.prov in ('WA', 'NT'):
                     self[apr25 + rd(weekday=MO)] = name + " (Observed)"
-                elif (apr25.weekday() == SUN and
-                      self.prov in ('ACT', 'QLD', 'SA', 'WA', 'NT')):
+                elif (
+                    apr25.weekday() == SUN
+                    and self.prov in ('ACT', 'QLD', 'SA', 'WA', 'NT')
+                ):
                     self[apr25 + rd(weekday=MO)] = name + " (Observed)"
 
         # Western Australia Day

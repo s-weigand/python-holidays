@@ -24,8 +24,10 @@ from holidays.holiday_base import HolidayBase
 
 
 class Canada(HolidayBase):
-    PROVINCES = ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'NT', 'NU', 'ON', 'PE',
-                 'QC', 'SK', 'YT']
+    PROVINCES = [
+        'AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'NT', 'NU', 'ON', 'PE', 'QC', 'SK',
+        'YT'
+    ]
 
     def __init__(self, **kwargs):
         self.country = 'CA'

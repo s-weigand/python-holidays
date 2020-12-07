@@ -49,20 +49,19 @@ class Honduras(HolidayBase):
             self[date(year, MAR, 19)] = name
 
         # Maundy Thursday
-        self[easter(year) + rd(weekday=TH(-1))
-             ] = "Jueves Santo [Maundy Thursday]"
+        self[easter(year) +
+             rd(weekday=TH(-1))] = "Jueves Santo [Maundy Thursday]"
 
         # Good Friday
-        self[easter(year) + rd(weekday=FR(-1))
-             ] = "Viernes Santo [Good Friday]"
+        self[easter(year) + rd(weekday=FR(-1))] = "Viernes Santo [Good Friday]"
 
         # Holy Saturday
-        self[easter(year) + rd(weekday=SA(-1))
-             ] = "Sábado de Gloria [Holy Saturday]"
+        self[easter(year) +
+             rd(weekday=SA(-1))] = "Sábado de Gloria [Holy Saturday]"
 
         # Easter Sunday
-        self[easter(year) + rd(weekday=SU(-1))
-             ] = "Domingo de Resurrección [Easter Sunday]"
+        self[easter(year) +
+             rd(weekday=SU(-1))] = "Domingo de Resurrección [Easter Sunday]"
 
         # America Day
         if self.observed and date(year, APR, 14):

@@ -71,4 +71,3 @@ class TestSerbia(unittest.TestCase):
         self.assertIn(date(2020, 4, 19), self.holidays)
         self.assertIn(date(2020, 4, 20), self.holidays)
         self.assertNotIn(date(2020, 4, 21), self.holidays)
-

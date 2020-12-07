@@ -72,8 +72,12 @@ class UnitedArabEmirates(HolidayBase):
         # Date is announced each year. Usually stretches along 3 or 4 days,
         # in some instances prepending/appending a day or two
         # before/after the official holiday.
-        dates_obs = {2017: [(JUN, 25)], 2018: [(JUN, 14)], 2019: [(JUN, 3)],
-                     2020: [(MAY, 24)]}
+        dates_obs = {
+            2017: [(JUN, 25)],
+            2018: [(JUN, 14)],
+            2019: [(JUN, 3)],
+            2020: [(MAY, 24)]
+        }
         fitr = "Eid al-Fitr"
         if year in dates_obs:
             for date_obs in dates_obs[year]:
@@ -91,8 +95,12 @@ class UnitedArabEmirates(HolidayBase):
                     '{} Holiday* (*estimated)'.format(fitr)
 
         # Arafat Day & Eid al-Adha
-        dates_obs = {2017: [(AUG, 31)], 2018: [(AUG, 20)], 2019: [(AUG, 10)],
-                     2020: [(JUL, 30)]}
+        dates_obs = {
+            2017: [(AUG, 31)],
+            2018: [(AUG, 20)],
+            2019: [(AUG, 10)],
+            2020: [(JUL, 30)]
+        }
         hajj = "Arafat (Hajj) Day"
         adha = "Eid al-Adha"
         if year in dates_obs:
@@ -113,8 +121,12 @@ class UnitedArabEmirates(HolidayBase):
                     '{} Holiday* (*estimated)'.format(adha)
 
         # Islamic New Year - (hijari_year, 1, 1)
-        dates_obs = {2017: [(SEP, 22)], 2018: [(SEP, 11)], 2019: [(AUG, 31)],
-                     2020: [(AUG, 23)]}
+        dates_obs = {
+            2017: [(SEP, 22)],
+            2018: [(SEP, 11)],
+            2019: [(AUG, 31)],
+            2020: [(AUG, 23)]
+        }
         new_hijri_year = "Al Hijra - Islamic New Year"
         if year in dates_obs:
             for date_obs in dates_obs[year]:
@@ -140,8 +152,11 @@ class UnitedArabEmirates(HolidayBase):
 
         # Prophet Muhammad's Birthday - (hijari_year, 3, 12)
         if year <= 2019:  # starting from 2020 the UAE government removed this
-            dates_obs = {2017: [(NOV, 30)], 2018: [(NOV, 19)],
-                         2019: [(NOV, 9)]}
+            dates_obs = {
+                2017: [(NOV, 30)],
+                2018: [(NOV, 19)],
+                2019: [(NOV, 9)]
+            }
             mawlud = "Mawlud al-Nabi - Prophet Mohammad's Birthday"
             if year in dates_obs:
                 for date_obs in dates_obs[year]:

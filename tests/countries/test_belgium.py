@@ -43,4 +43,3 @@ class TestBelgium(unittest.TestCase):
         self.assertIn(date(2017, 11, 1), self.holidays)
         self.assertIn(date(2017, 11, 11), self.holidays)
         self.assertIn(date(2017, 12, 25), self.holidays)
-

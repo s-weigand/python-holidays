@@ -45,7 +45,9 @@ class TestHungary(unittest.TestCase):
 
     def test_foundation_day_renamed_during_communism(self):
         for year in range(1950, 1990):
-            self.assertEqual(self.holidays[date(year, 8, 20)], "A kenyér ünnepe")
+            self.assertEqual(
+                self.holidays[date(year, 8, 20)], "A kenyér ünnepe"
+            )
 
     def test_christian_holidays_2nd_day_was_not_held_in_1955(self):
         hu_1955 = holidays.Hungary(years=[1955])

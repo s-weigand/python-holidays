@@ -206,35 +206,30 @@ class GBR(UnitedKingdom):
 
 
 class England(UnitedKingdom):
-
     def __init__(self, **kwargs):
         self.country = 'England'
         HolidayBase.__init__(self, **kwargs)
 
 
 class Wales(UnitedKingdom):
-
     def __init__(self, **kwargs):
         self.country = 'Wales'
         HolidayBase.__init__(self, **kwargs)
 
 
 class Scotland(UnitedKingdom):
-
     def __init__(self, **kwargs):
         self.country = 'Scotland'
         HolidayBase.__init__(self, **kwargs)
 
 
 class IsleOfMan(UnitedKingdom):
-
     def __init__(self, **kwargs):
         self.country = 'Isle of Man'
         HolidayBase.__init__(self, **kwargs)
 
 
 class NorthernIreland(UnitedKingdom):
-
     def __init__(self, **kwargs):
         self.country = 'Northern Ireland'
         HolidayBase.__init__(self, **kwargs)

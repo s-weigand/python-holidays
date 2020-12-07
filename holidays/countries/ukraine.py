@@ -25,7 +25,6 @@ class Ukraine(HolidayBase):
     """
     http://zakon1.rada.gov.ua/laws/show/322-08/paran454#n454
     """
-
     def __init__(self, **kwargs):
         self.country = "UA"
         HolidayBase.__init__(self, **kwargs)

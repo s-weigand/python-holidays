@@ -23,8 +23,10 @@ from holidays.holiday_base import HolidayBase
 
 
 class NewZealand(HolidayBase):
-    PROVINCES = ['NTL', 'AUK', 'TKI', 'HKB', 'WGN', 'MBH', 'NSN', 'CAN',
-                 'STC', 'WTL', 'OTA', 'STL', 'CIT']
+    PROVINCES = [
+        'NTL', 'AUK', 'TKI', 'HKB', 'WGN', 'MBH', 'NSN', 'CAN', 'STC', 'WTL',
+        'OTA', 'STL', 'CIT'
+    ]
 
     def __init__(self, **kwargs):
         self.country = 'NZ'

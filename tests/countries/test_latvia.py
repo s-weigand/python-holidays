@@ -45,4 +45,3 @@ class TestLatvia(unittest.TestCase):
         self.assertIn(date(2020, 12, 25), self.holidays)
         self.assertIn(date(2020, 12, 26), self.holidays)
         self.assertIn(date(2020, 12, 31), self.holidays)
-

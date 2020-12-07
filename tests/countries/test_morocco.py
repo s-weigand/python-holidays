@@ -64,9 +64,7 @@ class TestMorocco(unittest.TestCase):
 
     def test_1961(self):
         self.holidays = holidays.Morocco(years=[1961])
-        _holidays = [
-            date(1961, 11, 18),
-        ]
+        _holidays = [date(1961, 11, 18), ]
 
         for holiday in _holidays:
             self.assertIn(holiday, self.holidays)

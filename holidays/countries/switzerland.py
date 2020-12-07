@@ -21,9 +21,11 @@ from holidays.holiday_base import HolidayBase
 
 
 class Switzerland(HolidayBase):
-    PROVINCES = ['AG', 'AR', 'AI', 'BL', 'BS', 'BE', 'FR', 'GE', 'GL',
-                 'GR', 'JU', 'LU', 'NE', 'NW', 'OW', 'SG', 'SH', 'SZ',
-                 'SO', 'TG', 'TI', 'UR', 'VD', 'VS', 'ZG', 'ZH']
+    PROVINCES = [
+        'AG', 'AR', 'AI', 'BL', 'BS', 'BE', 'FR', 'GE', 'GL', 'GR', 'JU', 'LU',
+        'NE', 'NW', 'OW', 'SG', 'SH', 'SZ', 'SO', 'TG', 'TI', 'UR', 'VD', 'VS',
+        'ZG', 'ZH'
+    ]
 
     def __init__(self, **kwargs):
         self.country = 'CH'
@@ -33,8 +35,10 @@ class Switzerland(HolidayBase):
         # public holidays
         self[date(year, JAN, 1)] = 'Neujahrestag'
 
-        if self.prov in ('AG', 'BE', 'FR', 'GL', 'GR', 'JU', 'LU',
-                         'NE', 'OW', 'SH', 'SO', 'TG', 'VD', 'ZG', 'ZH'):
+        if self.prov in (
+            'AG', 'BE', 'FR', 'GL', 'GR', 'JU', 'LU', 'NE', 'OW', 'SH', 'SO',
+            'TG', 'VD', 'ZG', 'ZH'
+        ):
             self[date(year, JAN, 2)] = 'Berchtoldstag'
 
         if self.prov in ('SZ', 'TI', 'UR'):
@@ -48,8 +52,10 @@ class Switzerland(HolidayBase):
 
         # Näfelser Fahrt (first Thursday in April but not in Holy Week)
         if self.prov == 'GL' and year >= 1835:
-            if ((date(year, APR, 1) + rd(weekday=FR)) !=
-                    (easter(year) - rd(days=2))):
+            if (
+                (date(year, APR, 1) + rd(weekday=FR)) !=
+                (easter(year) - rd(days=2))
+            ):
                 self[date(year, APR, 1) + rd(weekday=TH)] = 'Näfelser Fahrt'
             else:
                 self[date(year, APR, 8) + rd(weekday=TH)] = 'Näfelser Fahrt'
@@ -62,8 +68,7 @@ class Switzerland(HolidayBase):
             self[easter(year) - rd(days=2)] = 'Karfreitag'
             self[easter(year) + rd(weekday=MO)] = 'Ostermontag'
 
-        if self.prov in ('BL', 'BS', 'JU', 'NE', 'SH', 'SO', 'TG', 'TI',
-                         'ZH'):
+        if self.prov in ('BL', 'BS', 'JU', 'NE', 'SH', 'SO', 'TG', 'TI', 'ZH'):
             self[date(year, MAY, 1)] = 'Tag der Arbeit'
 
         self[easter(year) + rd(days=39)] = 'Auffahrt'
@@ -73,8 +78,9 @@ class Switzerland(HolidayBase):
 
         self[easter(year) + rd(days=50)] = 'Pfingstmontag'
 
-        if self.prov in ('AI', 'JU', 'LU', 'NW', 'OW', 'SZ', 'TI', 'UR',
-                         'VS', 'ZG'):
+        if self.prov in (
+            'AI', 'JU', 'LU', 'NW', 'OW', 'SZ', 'TI', 'UR', 'VS', 'ZG'
+        ):
             self[easter(year) + rd(days=60)] = 'Fronleichnam'
 
         if self.prov == 'JU':
@@ -86,8 +92,9 @@ class Switzerland(HolidayBase):
         if year >= 1291:
             self[date(year, AUG, 1)] = 'Nationalfeiertag'
 
-        if self.prov in ('AI', 'JU', 'LU', 'NW', 'OW', 'SZ', 'TI', 'UR',
-                         'VS', 'ZG'):
+        if self.prov in (
+            'AI', 'JU', 'LU', 'NW', 'OW', 'SZ', 'TI', 'UR', 'VS', 'ZG'
+        ):
             self[date(year, AUG, 15)] = 'Mariä Himmelfahrt'
 
         if self.prov == 'VD':
@@ -103,19 +110,21 @@ class Switzerland(HolidayBase):
         if self.prov == 'OW':
             self[date(year, SEP, 25)] = 'Bruder Klaus'
 
-        if self.prov in ('AI', 'GL', 'JU', 'LU', 'NW', 'OW', 'SG', 'SZ',
-                         'TI', 'UR', 'VS', 'ZG'):
+        if self.prov in (
+            'AI', 'GL', 'JU', 'LU', 'NW', 'OW', 'SG', 'SZ', 'TI', 'UR', 'VS',
+            'ZG'
+        ):
             self[date(year, NOV, 1)] = 'Allerheiligen'
 
-        if self.prov in ('AI', 'LU', 'NW', 'OW', 'SZ', 'TI', 'UR', 'VS',
-                         'ZG'):
+        if self.prov in ('AI', 'LU', 'NW', 'OW', 'SZ', 'TI', 'UR', 'VS', 'ZG'):
             self[date(year, DEC, 8)] = 'Mariä Empfängnis'
 
         self[date(year, DEC, 25)] = 'Weihnachten'
 
-        if self.prov in ('AG', 'AR', 'AI', 'BL', 'BS', 'BE', 'FR', 'GL',
-                         'GR', 'LU', 'NE', 'NW', 'OW', 'SG', 'SH', 'SZ',
-                         'SO', 'TG', 'TI', 'UR', 'ZG', 'ZH'):
+        if self.prov in (
+            'AG', 'AR', 'AI', 'BL', 'BS', 'BE', 'FR', 'GL', 'GR', 'LU', 'NE',
+            'NW', 'OW', 'SG', 'SH', 'SZ', 'SO', 'TG', 'TI', 'UR', 'ZG', 'ZH'
+        ):
             self[date(year, DEC, 26)] = 'Stephanstag'
 
         if self.prov == 'GE':

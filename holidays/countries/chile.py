@@ -28,8 +28,10 @@ class Chile(HolidayBase):
     # https://es.wikipedia.org/wiki/Anexo:D%C3%ADas_feriados_en_Chile
 
     # ISO 3166-2 codes for the principal subdivisions, called regions
-    STATES = ['AI', 'AN', 'AP', 'AR', 'AT', 'BI', 'CO', 'LI', 'LL', 'LR',
-              'MA', 'ML', 'NB', 'RM', 'TA', 'VS']
+    STATES = [
+        'AI', 'AN', 'AP', 'AR', 'AT', 'BI', 'CO', 'LI', 'LL', 'LR', 'MA', 'ML',
+        'NB', 'RM', 'TA', 'VS'
+    ]
 
     def __init__(self, **kwargs):
         self.country = 'CL'
@@ -66,8 +68,8 @@ class Chile(HolidayBase):
         else:
             # floating Monday holiday (Law 19.668)
             if date(year, JUN, 29).weekday() <= THU:
-                self[date(year, JUN, 29) + rd(date(year, JUN, 29),
-                                              weekday=MO(-1))] = name
+                self[date(year, JUN, 29) +
+                     rd(date(year, JUN, 29), weekday=MO(-1))] = name
             elif date(year, JUN, 29).weekday() == FRI:
                 self[date(year, JUN, 29) + rd(weekday=MO)] = name
             else:
@@ -113,8 +115,8 @@ class Chile(HolidayBase):
             # floating Monday holiday (Law 19.668)
             name = ("Día del Descubrimiento de dos Mundos [Columbus Day]")
             if date(year, OCT, 12).weekday() <= THU:
-                self[date(year, OCT, 12) + rd(date(year, OCT, 12),
-                                              weekday=MO(-1))] = name
+                self[date(year, OCT, 12) +
+                     rd(date(year, OCT, 12), weekday=MO(-1))] = name
             elif date(year, OCT, 12).weekday() == FRI:
                 self[date(year, OCT, 12) + rd(weekday=MO)] = name
             else:
@@ -122,8 +124,10 @@ class Chile(HolidayBase):
 
         # National Day of the Evangelical and Protestant Churches (Law 20.299)
         if year > 2007:
-            name = ("Día Nacional de las Iglesias Evangélicas y Protestantes "
-                    " [Reformation Day]")
+            name = (
+                "Día Nacional de las Iglesias Evangélicas y Protestantes "
+                " [Reformation Day]"
+            )
             self[date(year, OCT, 31)] = name
 
         # All Saints Day (Law 2.977)
@@ -140,8 +144,10 @@ class Chile(HolidayBase):
         # región de Arica y Parinacota
         if self.state == 'AP' and year >= 2020:
             # Law 20.663
-            self[date(year, JUN, 7)] = ("Asalto y Toma del Morro de Arica"
-                                        " [Assault and Capture of Cape Arica]")
+            self[date(year, JUN, 7)] = (
+                "Asalto y Toma del Morro de Arica"
+                " [Assault and Capture of Cape Arica]"
+            )
 
         # región de Ñuble
         if self.state == 'NB' and year >= 2014:

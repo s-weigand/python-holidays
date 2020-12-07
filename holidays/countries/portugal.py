@@ -70,7 +70,6 @@ class PortugalExt(Portugal):
     - the day before the new year
     - Lisbon's city holiday
     """
-
     def _populate(self, year):
         super(PortugalExt, self)._populate(year)
 

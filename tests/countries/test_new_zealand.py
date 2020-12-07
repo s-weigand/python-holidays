@@ -35,27 +35,10 @@ class TestNZ(unittest.TestCase):
             self.assertIn(dt, self.holidays)
         for year, day in enumerate(
             [
-                1,
-                1,
-                1,
-                1,
-                3,  # 2001-05
-                3,
-                1,
-                1,
-                1,
-                1,  # 2006-10
-                3,
-                3,
-                1,
-                1,
-                1,  # 2011-15
-                1,
-                3,
-                1,
-                1,
-                1,
-                1,
+                1, 1, 1, 1, 3,  # 2001-05
+                3, 1, 1, 1, 1,  # 2006-10
+                3, 3, 1, 1, 1,  # 2011-15
+                1, 3, 1, 1, 1, 1,
             ],  # 2016-21
             2001,
         ):
@@ -71,27 +54,10 @@ class TestNZ(unittest.TestCase):
             self.assertIn(dt, self.holidays)
         for year, day in enumerate(
             [
-                2,
-                2,
-                2,
-                2,
-                2,  # 2001-05
-                2,
-                2,
-                2,
-                2,
-                4,  # 2006-10
-                4,
-                2,
-                2,
-                2,
-                2,  # 2011-15
-                4,
-                2,
-                2,
-                2,
-                2,
-                4,
+                2, 2, 2, 2, 2,  # 2001-05
+                2, 2, 2, 2, 4,  # 2006-10
+                4, 2, 2, 2, 2,  # 2011-15
+                4, 2, 2, 2, 2, 4,
             ],  # 2016-21
             2001,
         ):
@@ -114,27 +80,10 @@ class TestNZ(unittest.TestCase):
             self.assertIn(dt, self.holidays)
         for year, day in enumerate(
             [
-                6,
-                6,
-                6,
-                6,
-                6,  # 2001-05
-                6,
-                6,
-                6,
-                6,
-                6,  # 2006-10
-                6,
-                6,
-                6,
-                6,
-                6,  # 2011-15
-                8,
-                6,
-                6,
-                6,
-                6,
-                8,
+                6, 6, 6, 6, 6,  # 2001-05
+                6, 6, 6, 6, 6,  # 2006-10
+                6, 6, 6, 6, 6,  # 2011-15
+                8, 6, 6, 6, 6, 8,
             ],  # 2016-21
             2001,
         ):
@@ -185,27 +134,10 @@ class TestNZ(unittest.TestCase):
             self.assertIn(dt, self.holidays)
         for year, day in enumerate(
             [
-                25,
-                25,
-                25,
-                25,
-                25,  # 2001-05
-                25,
-                25,
-                25,
-                25,
-                25,  # 2006-10
-                25,
-                25,
-                25,
-                25,
-                27,  # 2011-15
-                25,
-                25,
-                25,
-                25,
-                27,
-                26,
+                25, 25, 25, 25, 25,  # 2001-05
+                25, 25, 25, 25, 25,  # 2006-10
+                25, 25, 25, 25, 27,  # 2011-15
+                25, 25, 25, 25, 27, 26,
             ],  # 2016-21
             2001,
         ):
@@ -227,27 +159,10 @@ class TestNZ(unittest.TestCase):
             self.assertEqual(self.holidays[dt], "King's Birthday")
         for year, day in enumerate(
             [
-                4,
-                3,
-                2,
-                7,
-                6,  # 2001-05
-                5,
-                4,
-                2,
-                1,
-                7,  # 2006-10
-                6,
-                4,
-                3,
-                2,
-                1,  # 2011-15
-                6,
-                5,
-                4,
-                3,
-                1,
-                7,
+                4, 3, 2, 7, 6,  # 2001-05
+                5, 4, 2, 1, 7,  # 2006-10
+                6, 4, 3, 2, 1,  # 2011-15
+                6, 5, 4, 3, 1, 7,
             ],  # 2016-21
             2001,
         ):
@@ -258,27 +173,10 @@ class TestNZ(unittest.TestCase):
     def test_labour_day(self):
         for year, day in enumerate(
             [
-                22,
-                28,
-                27,
-                25,
-                24,  # 2001-05
-                23,
-                22,
-                27,
-                26,
-                25,  # 2006-10
-                24,
-                22,
-                28,
-                27,
-                26,  # 2011-15
-                24,
-                23,
-                22,
-                28,
-                26,
-                25,
+                22, 28, 27, 25, 24,  # 2001-05
+                23, 22, 27, 26, 25,  # 2006-10
+                24, 22, 28, 27, 26,  # 2011-15
+                24, 23, 22, 28, 26, 25,
             ],  # 2016-21
             2001,
         ):
@@ -297,30 +195,15 @@ class TestNZ(unittest.TestCase):
             self.holidays[date(2011, 12, 26)], "Christmas Day (Observed)"
         )
         self.holidays.observed = True
-        self.assertEqual(self.holidays[date(2011, 12, 27)], "Christmas Day (Observed)")
+        self.assertEqual(
+            self.holidays[date(2011, 12, 27)], "Christmas Day (Observed)"
+        )
         for year, day in enumerate(
             [
-                25,
-                25,
-                25,
-                27,
-                27,  # 2001-05
-                25,
-                25,
-                25,
-                25,
-                27,  # 2006-10
-                27,
-                25,
-                25,
-                25,
-                25,  # 2011-15
-                27,
-                25,
-                25,
-                25,
-                25,
-                25,
+                25, 25, 25, 27, 27,  # 2001-05
+                25, 25, 25, 25, 27,  # 2006-10
+                27, 25, 25, 25, 25,  # 2011-15
+                27, 25, 25, 25, 25, 25,
             ],  # 2016-21
             2001,
         ):
@@ -341,27 +224,10 @@ class TestNZ(unittest.TestCase):
         self.assertIn(date(2010, 12, 27), self.holidays)
         for year, day in enumerate(
             [
-                26,
-                26,
-                26,
-                28,
-                26,  # 2001-05
-                26,
-                26,
-                26,
-                28,
-                28,  # 2006-10
-                26,
-                26,
-                26,
-                26,
-                28,  # 2011-15
-                26,
-                26,
-                26,
-                26,
-                28,
-                28,
+                26, 26, 26, 28, 26,  # 2001-05
+                26, 26, 26, 28, 28,  # 2006-10
+                26, 26, 26, 26, 28,  # 2011-15
+                26, 26, 26, 26, 28, 28,
             ],  # 2016-21
             2001,
         ):
@@ -373,27 +239,10 @@ class TestNZ(unittest.TestCase):
         auk_holidays = holidays.NZ(prov="Auckland")
         for year, day in enumerate(
             [
-                29,
-                28,
-                27,
-                26,
-                31,  # 2001-05
-                30,
-                29,
-                28,
-                26,
-                1,  # 2006-10
-                31,
-                30,
-                28,
-                27,
-                26,  # 2011-15
-                1,
-                30,
-                29,
-                28,
-                27,
-                1,
+                29, 28, 27, 26, 31,  # 2001-05
+                30, 29, 28, 26, 1,  # 2006-10
+                31, 30, 28, 27, 26,  # 2011-15
+                1, 30, 29, 28, 27, 1,
             ],  # 2016-21
             2001,
         ):
@@ -405,27 +254,10 @@ class TestNZ(unittest.TestCase):
         tki_holidays = holidays.NZ(prov="Taranaki")
         for year, day in enumerate(
             [
-                12,
-                11,
-                10,
-                8,
-                14,  # 2001-05
-                13,
-                12,
-                10,
-                9,
-                8,  # 2006-10
-                14,
-                12,
-                11,
-                10,
-                9,  # 2011-15
-                14,
-                13,
-                12,
-                11,
-                9,
-                8,
+                12, 11, 10, 8, 14,  # 2001-05
+                13, 12, 10, 9, 8,  # 2006-10
+                14, 12, 11, 10, 9,  # 2011-15
+                14, 13, 12, 11, 9, 8,
             ],  # 2016-21
             2001,
         ):
@@ -437,27 +269,10 @@ class TestNZ(unittest.TestCase):
         hkb_holidays = holidays.NZ(prov="Hawke's Bay")
         for year, day in enumerate(
             [
-                19,
-                25,
-                24,
-                22,
-                21,  # 2001-05
-                20,
-                19,
-                24,
-                23,
-                22,  # 2006-10
-                21,
-                19,
-                25,
-                24,
-                23,  # 2011-15
-                21,
-                20,
-                19,
-                25,
-                23,
-                22,
+                19, 25, 24, 22, 21,  # 2001-05
+                20, 19, 24, 23, 22,  # 2006-10
+                21, 19, 25, 24, 23,  # 2011-15
+                21, 20, 19, 25, 23, 22,
             ],  # 2016-21
             2001,
         ):
@@ -469,91 +284,44 @@ class TestNZ(unittest.TestCase):
         wgn_holidays = holidays.NZ(prov="Wellington")
         for year, day in enumerate(
             [
-                22,
-                21,
-                20,
-                19,
-                24,  # 2001-05
-                23,
-                22,
-                21,
-                19,
-                25,  # 2006-10
-                24,
-                23,
-                21,
-                20,
-                19,  # 2011-15
-                25,
-                23,
-                22,
-                21,
-                20,
-                25,
+                22, 21, 20, 19, 24,  # 2001-05
+                23, 22, 21, 19, 25,  # 2006-10
+                24, 23, 21, 20, 19,  # 2011-15
+                25, 23, 22, 21, 20, 25,
             ],  # 2016-21
             2001,
         ):
             dt = date(year, 1, day)
             self.assertIn(dt, wgn_holidays, dt)
-            self.assertEqual(wgn_holidays[dt], "Wellington Anniversary Day", dt)
+            self.assertEqual(
+                wgn_holidays[dt], "Wellington Anniversary Day", dt
+            )
 
     def test_marlborough_anniversary_day(self):
         mbh_holidays = holidays.NZ(prov="Marlborough")
         for year, day in enumerate(
             [
-                29,
-                4,
-                3,
-                1,
-                31,  # 2001-05
-                30,
-                29,
-                3,
-                2,
-                1,  # 2006-10
-                31,
-                29,
-                4,
-                3,
-                2,  # 2011-15
-                31,
-                30,
-                29,
-                4,
-                2,
-                1,
+                29, 4, 3, 1, 31,  # 2001-05
+                30, 29, 3, 2, 1,  # 2006-10
+                31, 29, 4, 3, 2,  # 2011-15
+                31, 30, 29, 4, 2, 1,
             ],  # 2016-21
             2001,
         ):
             dt = date(year, 11 if day < 9 else 10, day)
             self.assertIn(dt, mbh_holidays, dt)
-            self.assertEqual(mbh_holidays[dt], "Marlborough Anniversary Day", dt)
+            self.assertEqual(
+                mbh_holidays[dt], "Marlborough Anniversary Day", dt
+            )
 
     def test_nelson_anniversary_day(self):
         nsn_holidays = holidays.NZ(prov="Nelson")
         for year, day in enumerate(
             [
-                29,
-                4,
-                3,
-                2,
-                31,  # 2001-05
-                30,
-                29,
-                4,
-                2,
-                1,  # 2006-10
-                31,
-                30,
-                4,
-                3,
-                2,  # 2011-15
-                1,
-                30,
-                29,
-                4,
-                3,
-                1,
+                29, 4, 3, 2, 31,  # 2001-05
+                30, 29, 4, 2, 1,  # 2006-10
+                31, 30, 4, 3, 2,  # 2011-15
+                1, 30, 29, 4, 3, 1,
             ],  # 2016-21
             2001,
         ):
@@ -565,91 +333,44 @@ class TestNZ(unittest.TestCase):
         can_holidays = holidays.NZ(prov="Canterbury")
         for year, day in enumerate(
             [
-                16,
-                15,
-                14,
-                12,
-                11,  # 2001-05
-                17,
-                16,
-                14,
-                13,
-                12,  # 2006-10
-                11,
-                16,
-                15,
-                14,
-                13,  # 2011-15
-                11,
-                17,
-                16,
-                15,
-                13,
-                12,
+                16, 15, 14, 12, 11,  # 2001-05
+                17, 16, 14, 13, 12,  # 2006-10
+                11, 16, 15, 14, 13,  # 2011-15
+                11, 17, 16, 15, 13, 12,
             ],  # 2016-21
             2001,
         ):
             dt = date(year, 11, day)
             self.assertIn(dt, can_holidays, dt)
-            self.assertEqual(can_holidays[dt], "Canterbury Anniversary Day", dt)
+            self.assertEqual(
+                can_holidays[dt], "Canterbury Anniversary Day", dt
+            )
 
     def test_south_canterbury_anniversary_day(self):
         stc_holidays = holidays.NZ(prov="South Canterbury")
         for year, day in enumerate(
             [
-                24,
-                23,
-                22,
-                27,
-                26,  # 2001-05
-                25,
-                24,
-                22,
-                28,
-                27,  # 2006-10
-                26,
-                24,
-                23,
-                22,
-                28,  # 2011-15
-                26,
-                25,
-                24,
-                23,
-                28,
-                27,
+                24, 23, 22, 27, 26,  # 2001-05
+                25, 24, 22, 28, 27,  # 2006-10
+                26, 24, 23, 22, 28,  # 2011-15
+                26, 25, 24, 23, 28, 27,
             ],  # 2016-21
             2001,
         ):
             dt = date(year, 9, day)
             self.assertIn(dt, stc_holidays, dt)
-            self.assertEqual(stc_holidays[dt], "South Canterbury Anniversary Day", dt)
+            self.assertEqual(
+                stc_holidays[dt], "South Canterbury Anniversary Day", dt
+            )
 
     def test_westland_anniversary_day(self):
         wtc_holidays = holidays.NZ(prov="Westland")
         for year, day in enumerate(
             [
-                3,
-                2,
-                1,
-                29,
-                5,  # 2001-05
-                4,
-                3,
-                1,
-                30,
-                29,  # 2006-10
-                28,
-                3,
-                2,
-                1,
-                30,  # 2011-15
-                28,
-                4,
-                3,
-                2,
-                30,
-                29,
+                3, 2, 1, 29, 5,  # 2001-05
+                4, 3, 1, 30, 29,  # 2006-10
+                28, 3, 2, 1, 30,  # 2011-15
+                28, 4, 3, 2, 30, 29,
             ],  # 2016-21
             2001,
         ):
@@ -661,27 +382,10 @@ class TestNZ(unittest.TestCase):
         ota_holidays = holidays.NZ(prov="Otago")
         for year, day in enumerate(
             [
-                26,
-                25,
-                24,
-                22,
-                21,  # 2001-05
-                20,
-                26,
-                25,
-                23,
-                22,  # 2006-10
-                21,
-                26,
-                25,
-                24,
-                23,  # 2011-15
-                21,
-                20,
-                26,
-                25,
-                23,
-                22,
+                26, 25, 24, 22, 21,  # 2001-05
+                20, 26, 25, 23, 22,  # 2006-10
+                21, 26, 25, 24, 23,  # 2011-15
+                21, 20, 26, 25, 23, 22,
             ],  # 2016-21
             2001,
         ):
@@ -692,96 +396,65 @@ class TestNZ(unittest.TestCase):
     def test_southland_anniversary_day(self):
         stl_holidays = holidays.NZ(prov="Southland")
         for year, day in enumerate(
-            [15, 14, 20, 19, 17, 16, 15, 14, 19, 18, 17], 2001  # 2001-05  # 2006-11
+            [15, 14, 20, 19, 17, 16, 15, 14, 19, 18, 17],
+            2001  # 2001-05  # 2006-11
         ):
             dt = date(year, 1, day)
             self.assertIn(dt, stl_holidays, dt)
             self.assertEqual(stl_holidays[dt], "Southland Anniversary Day", dt)
             for year, (month, day) in enumerate(
                 [
-                    (4, 10),
-                    (4, 2),
-                    (4, 22),
-                    (4, 7),
-                    (3, 29),
-                    (4, 18),
-                    (4, 3),
-                    (4, 23),
-                    (4, 14),
-                    (4, 6),
-                ],
-                2012,
+                    (4, 10), (4, 2), (4, 22), (4, 7), (3, 29), (4, 18), (4, 3),
+                    (4, 23), (4, 14), (4, 6),
+                ], 2012,
             ):
                 dt = date(year, month, day)
                 self.assertIn(dt, stl_holidays, dt)
-                self.assertEqual(stl_holidays[dt], "Southland Anniversary Day", dt)
+                self.assertEqual(
+                    stl_holidays[dt], "Southland Anniversary Day", dt
+                )
 
     def test_chatham_islands_anniversary_day(self):
         cit_holidays = holidays.NZ(prov="Chatham Islands")
         for year, day in enumerate(
             [
-                3,
-                2,
-                1,
-                29,
-                28,  # 2001-05
-                27,
-                3,
-                1,
-                30,
-                29,  # 2006-10
-                28,
-                3,
-                2,
-                1,
-                30,  # 2011-15
-                28,
-                27,
-                3,
-                2,
-                30,
-                29,
+                3, 2, 1, 29, 28,  # 2001-05
+                27, 3, 1, 30, 29,  # 2006-10
+                28, 3, 2, 1, 30,  # 2011-15
+                28, 27, 3, 2, 30, 29,
             ],  # 2016-21
             2001,
         ):
             dt = date(year, 12 if day < 9 else 11, day)
             self.assertIn(dt, cit_holidays, dt)
-            self.assertEqual(cit_holidays[dt], "Chatham Islands Anniversary Day", dt)
+            self.assertEqual(
+                cit_holidays[dt], "Chatham Islands Anniversary Day", dt
+            )
 
     def test_all_holidays_present(self):
-        nz_1969 = sum(holidays.NZ(years=[1969], prov=p) for p in holidays.NZ.PROVINCES)
+        nz_1969 = sum(
+            holidays.NZ(years=[1969], prov=p) for p in holidays.NZ.PROVINCES
+        )
         holidays_in_1969 = sum((nz_1969.get_list(key) for key in nz_1969), [])
-        nz_2015 = sum(holidays.NZ(years=[2015], prov=p) for p in holidays.NZ.PROVINCES)
+        nz_2015 = sum(
+            holidays.NZ(years=[2015], prov=p) for p in holidays.NZ.PROVINCES
+        )
         holidays_in_2015 = sum((nz_2015.get_list(key) for key in nz_2015), [])
-        nz_1974 = sum(holidays.NZ(years=[1974], prov=p) for p in holidays.NZ.PROVINCES)
+        nz_1974 = sum(
+            holidays.NZ(years=[1974], prov=p) for p in holidays.NZ.PROVINCES
+        )
         holidays_in_1974 = sum((nz_1974.get_list(key) for key in nz_1974), [])
         all_holidays = [
-            "New Year's Day",
-            "Day after New Year's Day",
-            "Waitangi Day",
-            "Good Friday",
-            "Easter Monday",
-            "Anzac Day",
-            "Queen's Birthday",
-            "Labour Day",
-            "Christmas Day",
-            "Boxing Day",
-            "Auckland Anniversary Day",
-            "Taranaki Anniversary Day",
-            "Hawke's Bay Anniversary Day",
-            "Wellington Anniversary Day",
-            "Marlborough Anniversary Day",
-            "Nelson Anniversary Day",
-            "Canterbury Anniversary Day",
-            "South Canterbury Anniversary Day",
-            "Westland Anniversary Day",
-            "Otago Anniversary Day",
-            "Southland Anniversary Day",
-            "Chatham Islands Anniversary Day",
-            "Queen's Birthday",
-            "Labour Day",
-            "Christmas Day",
-            "Boxing Day",
+            "New Year's Day", "Day after New Year's Day", "Waitangi Day",
+            "Good Friday", "Easter Monday", "Anzac Day", "Queen's Birthday",
+            "Labour Day", "Christmas Day", "Boxing Day",
+            "Auckland Anniversary Day", "Taranaki Anniversary Day",
+            "Hawke's Bay Anniversary Day", "Wellington Anniversary Day",
+            "Marlborough Anniversary Day", "Nelson Anniversary Day",
+            "Canterbury Anniversary Day", "South Canterbury Anniversary Day",
+            "Westland Anniversary Day", "Otago Anniversary Day",
+            "Southland Anniversary Day", "Chatham Islands Anniversary Day",
+            "Queen's Birthday", "Labour Day", "Christmas Day", "Boxing Day",
         ]
         for holiday in all_holidays:
             self.assertIn(holiday, holidays_in_1969, holiday)
@@ -791,4 +464,3 @@ class TestNZ(unittest.TestCase):
         for holiday in all_holidays:
             self.assertIn(holiday, holidays_in_1974, holiday)
         self.assertNotIn("Waitangi Day", holidays_in_1974)
-

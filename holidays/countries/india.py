@@ -23,8 +23,10 @@ class India(HolidayBase):
     # https://www.calendarlabs.com/holidays/india/
     # https://slusi.dacnet.nic.in/watershedatlas/list_of_state_abbreviation.htm
 
-    PROVINCES = ['AS', 'CG', 'SK', 'KA', 'GJ', 'BR', 'RJ', 'OD',
-                 'TN', 'AP', 'WB', 'KL', 'HR', 'MH', 'MP', 'UP', 'UK', 'TS']
+    PROVINCES = [
+        'AS', 'CG', 'SK', 'KA', 'GJ', 'BR', 'RJ', 'OD', 'TN', 'AP', 'WB', 'KL',
+        'HR', 'MH', 'MP', 'UP', 'UK', 'TS'
+    ]
 
     def __init__(self, **kwargs):
         self.country = "IND"
@@ -69,8 +71,9 @@ class India(HolidayBase):
             self[date(year, APR, 15)] = "Maha Vishuva Sankranti / Pana" \
                                         " Sankranti"
 
-        if self.prov in ('OD', 'AP', 'BR', 'WB', 'KL',
-                         'HR', 'MH', 'UP', 'UK', 'TN'):
+        if self.prov in (
+            'OD', 'AP', 'BR', 'WB', 'KL', 'HR', 'MH', 'UP', 'UK', 'TN'
+        ):
             self[date(year, APR, 14)] = "Dr. B. R. Ambedkar's Jayanti"
 
         if self.prov == 'TN':

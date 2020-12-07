@@ -122,12 +122,11 @@ class Colombia(HolidayBase):
         # Holidays based on Easter
 
         # Maundy Thursday
-        self[easter(year) + rd(weekday=TH(-1))
-             ] = "Jueves Santo [Maundy Thursday]"
+        self[easter(year) +
+             rd(weekday=TH(-1))] = "Jueves Santo [Maundy Thursday]"
 
         # Good Friday
-        self[easter(year) + rd(weekday=FR(-1))
-             ] = "Viernes Santo [Good Friday]"
+        self[easter(year) + rd(weekday=FR(-1))] = "Viernes Santo [Good Friday]"
 
         # Holidays based on Easter but are observed the following monday
         # (unless they occur on a monday)

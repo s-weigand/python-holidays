@@ -25,7 +25,6 @@ from flake8.api import legacy as flake8
 import holidays
 
 
-
 class TestNetherlands(unittest.TestCase):
     def setUp(self):
         self.holidays = holidays.NL()

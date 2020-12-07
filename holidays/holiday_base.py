@@ -20,8 +20,9 @@ from dateutil.parser import parse
 class HolidayBase(dict):
     PROVINCES = []
 
-    def __init__(self, years=[], expand=True, observed=True,
-                 prov=None, state=None):
+    def __init__(
+        self, years=[], expand=True, observed=True, prov=None, state=None
+    ):
         self.observed = observed
         self.expand = expand
         if isinstance(years, int):
@@ -104,10 +105,7 @@ class HolidayBase(dict):
             for delta_days in range(0, date_diff.days, step):
                 day = start + timedelta(days=delta_days)
                 try:
-                    dict.__getitem__(
-                        self,
-                        day
-                    )
+                    dict.__getitem__(self, day)
                     days_in_range.append(day)
                 except KeyError:
                     pass
@@ -177,8 +175,9 @@ class HolidayBase(dict):
         elif not isinstance(other, HolidayBase):
             raise TypeError()
         HolidaySum = createHolidaySum(self, other)
-        country = (getattr(self, 'country', None) or
-                   getattr(other, 'country', None))
+        country = (
+            getattr(self, 'country', None) or getattr(other, 'country', None)
+        )
         if self.country and other.country and self.country != other.country:
             c1 = self.country
             if not isinstance(c1, list):
@@ -192,10 +191,13 @@ class HolidayBase(dict):
             p1 = self.prov if isinstance(self.prov, list) else [self.prov]
             p2 = other.prov if isinstance(other.prov, list) else [other.prov]
             prov = p1 + p2
-        return HolidaySum(years=(self.years | other.years),
-                          expand=(self.expand or other.expand),
-                          observed=(self.observed or other.observed),
-                          country=country, prov=prov)
+        return HolidaySum(
+            years=(self.years | other.years),
+            expand=(self.expand or other.expand),
+            observed=(self.observed or other.observed),
+            country=country,
+            prov=prov
+        )
 
     def __radd__(self, other):
         return self.__add__(other)
@@ -206,7 +208,6 @@ class HolidayBase(dict):
 
 def createHolidaySum(h1, h2):
     class HolidaySum(HolidayBase):
-
         def __init__(self, country, **kwargs):
             self.country = country
             self.holidays = []

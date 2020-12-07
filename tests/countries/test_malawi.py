@@ -50,4 +50,3 @@ class TestMalawi(unittest.TestCase):
     def test_not_holiday(self):
         self.assertNotIn("2016-12-28", self.holidays)
         self.assertNotIn("2015-03-02", self.holidays)
-

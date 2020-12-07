@@ -31,7 +31,6 @@ class Slovenia(HolidayBase):
     List of holidays (including those that are not work-free:
     https://en.wikipedia.org/wiki/Public_holidays_in_Slovenia
     """
-
     def __init__(self, **kwargs):
         self.country = 'SI'
         HolidayBase.__init__(self, **kwargs)

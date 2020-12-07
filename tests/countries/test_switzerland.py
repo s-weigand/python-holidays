@@ -33,34 +33,19 @@ class TestSwitzerland(unittest.TestCase):
         )
 
     def test_all_holidays_present(self):
-        ch_2018 = sum(holidays.CH(years=[2018], prov=p) for p in holidays.CH.PROVINCES)
+        ch_2018 = sum(
+            holidays.CH(years=[2018], prov=p) for p in holidays.CH.PROVINCES
+        )
         in_2018 = sum((ch_2018.get_list(key) for key in ch_2018), [])
         all_ch = [
-            "Neujahrestag",
-            "Berchtoldstag",
-            "Heilige Drei Könige",
-            "Jahrestag der Ausrufung der Republik",
-            "Josefstag",
-            "Näfelser Fahrt",
-            "Karfreitag",
-            "Ostern",
-            "Ostermontag",
-            "Tag der Arbeit",
-            "Auffahrt",
-            "Pfingsten",
-            "Pfingstmontag",
-            "Fronleichnam",
-            "Fest der Unabhängigkeit",
-            "Peter und Paul",
-            "Nationalfeiertag",
-            "Mariä Himmelfahrt",
-            "Lundi du Jeûne",
-            "Bruder Klaus",
-            "Allerheiligen",
-            "Mariä Empfängnis",
-            "Escalade de Genève",
-            "Weihnachten",
-            "Stephanstag",
+            "Neujahrestag", "Berchtoldstag", "Heilige Drei Könige",
+            "Jahrestag der Ausrufung der Republik", "Josefstag",
+            "Näfelser Fahrt", "Karfreitag", "Ostern", "Ostermontag",
+            "Tag der Arbeit", "Auffahrt", "Pfingsten", "Pfingstmontag",
+            "Fronleichnam", "Fest der Unabhängigkeit", "Peter und Paul",
+            "Nationalfeiertag", "Mariä Himmelfahrt", "Lundi du Jeûne",
+            "Bruder Klaus", "Allerheiligen", "Mariä Empfängnis",
+            "Escalade de Genève", "Weihnachten", "Stephanstag",
             "Wiederherstellung der Republik",
         ]
 
@@ -80,21 +65,8 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_berchtoldstag(self):
         provinces_that_have = {
-            "AG",
-            "BE",
-            "FR",
-            "GL",
-            "GR",
-            "JU",
-            "LU",
-            "NE",
-            "OW",
-            "SH",
-            "SO",
-            "TG",
-            "VD",
-            "ZG",
-            "ZH",
+            "AG", "BE", "FR", "GL", "GR", "JU", "LU", "NE", "OW", "SH", "SO",
+            "TG", "VD", "ZG", "ZH",
         }
         provinces_that_dont = set(holidays.CH.PROVINCES) - provinces_that_have
 
@@ -133,22 +105,10 @@ class TestSwitzerland(unittest.TestCase):
     def test_naefelser_fahrt(self):
         known_good = [
             (2018, 4, 5),
-            (2019, 4, 4),
-            (2020, 4, 2),
-            (2021, 4, 8),
-            (2022, 4, 7),
-            (2023, 4, 13),
-            (2024, 4, 4),
-            (2025, 4, 3),
-            (2026, 4, 9),
-            (2027, 4, 1),
-            (2028, 4, 6),
-            (2029, 4, 5),
-            (2030, 4, 4),
-            (2031, 4, 3),
-            (2032, 4, 1),
-            (2033, 4, 7),
-            (2034, 4, 13),
+            (2019, 4, 4), (2020, 4, 2), (2021, 4, 8), (2022, 4, 7),
+            (2023, 4, 13), (2024, 4, 4), (2025, 4, 3), (2026, 4, 9),
+            (2027, 4, 1), (2028, 4, 6), (2029, 4, 5), (2030, 4, 4),
+            (2031, 4, 3), (2032, 4, 1), (2033, 4, 7), (2034, 4, 13),
             (2035, 4, 5),
         ]
         provinces_that_have = {"GL"}
@@ -161,24 +121,11 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_karfreitag(self):
         known_good = [
-            (2018, 3, 30),
-            (2019, 4, 19),
-            (2020, 4, 10),
-            (2021, 4, 2),
-            (2022, 4, 15),
-            (2023, 4, 7),
-            (2024, 3, 29),
-            (2025, 4, 18),
-            (2026, 4, 3),
-            (2027, 3, 26),
-            (2028, 4, 14),
-            (2029, 3, 30),
-            (2030, 4, 19),
-            (2031, 4, 11),
-            (2032, 3, 26),
-            (2033, 4, 15),
-            (2034, 4, 7),
-            (2035, 3, 23),
+            (2018, 3, 30), (2019, 4, 19), (2020, 4, 10), (2021, 4, 2),
+            (2022, 4, 15), (2023, 4, 7), (2024, 3, 29), (2025, 4, 18),
+            (2026, 4, 3), (2027, 3, 26), (2028, 4, 14), (2029, 3, 30),
+            (2030, 4, 19), (2031, 4, 11), (2032, 3, 26), (2033, 4, 15),
+            (2034, 4, 7), (2035, 3, 23),
         ]
         provinces_that_dont = {"VS"}
         provinces_that_have = set(holidays.CH.PROVINCES) - provinces_that_dont
@@ -189,24 +136,11 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_ostern(self):
         known_good = [
-            (2018, 4, 1),
-            (2019, 4, 21),
-            (2020, 4, 12),
-            (2021, 4, 4),
-            (2022, 4, 17),
-            (2023, 4, 9),
-            (2024, 3, 31),
-            (2025, 4, 20),
-            (2026, 4, 5),
-            (2027, 3, 28),
-            (2028, 4, 16),
-            (2029, 4, 1),
-            (2030, 4, 21),
-            (2031, 4, 13),
-            (2032, 3, 28),
-            (2033, 4, 17),
-            (2034, 4, 9),
-            (2035, 3, 25),
+            (2018, 4, 1), (2019, 4, 21), (2020, 4, 12), (2021, 4, 4),
+            (2022, 4, 17), (2023, 4, 9), (2024, 3, 31), (2025, 4, 20),
+            (2026, 4, 5), (2027, 3, 28), (2028, 4, 16), (2029, 4, 1),
+            (2030, 4, 21), (2031, 4, 13), (2032, 3, 28), (2033, 4, 17),
+            (2034, 4, 9), (2035, 3, 25),
         ]
 
         for province, (y, m, d) in product(holidays.CH.PROVINCES, known_good):
@@ -214,24 +148,11 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_ostermontag(self):
         known_good = [
-            (2018, 4, 2),
-            (2019, 4, 22),
-            (2020, 4, 13),
-            (2021, 4, 5),
-            (2022, 4, 18),
-            (2023, 4, 10),
-            (2024, 4, 1),
-            (2025, 4, 21),
-            (2026, 4, 6),
-            (2027, 3, 29),
-            (2028, 4, 17),
-            (2029, 4, 2),
-            (2030, 4, 22),
-            (2031, 4, 14),
-            (2032, 3, 29),
-            (2033, 4, 18),
-            (2034, 4, 10),
-            (2035, 3, 26),
+            (2018, 4, 2), (2019, 4, 22), (2020, 4, 13), (2021, 4, 5),
+            (2022, 4, 18), (2023, 4, 10), (2024, 4, 1), (2025, 4, 21),
+            (2026, 4, 6), (2027, 3, 29), (2028, 4, 17), (2029, 4, 2),
+            (2030, 4, 22), (2031, 4, 14), (2032, 3, 29), (2033, 4, 18),
+            (2034, 4, 10), (2035, 3, 26),
         ]
         provinces_that_dont = {"VS"}
         provinces_that_have = set(holidays.CH.PROVINCES) - provinces_that_dont
@@ -242,24 +163,11 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_auffahrt(self):
         known_good = [
-            (2018, 5, 10),
-            (2019, 5, 30),
-            (2020, 5, 21),
-            (2021, 5, 13),
-            (2022, 5, 26),
-            (2023, 5, 18),
-            (2024, 5, 9),
-            (2025, 5, 29),
-            (2026, 5, 14),
-            (2027, 5, 6),
-            (2028, 5, 25),
-            (2029, 5, 10),
-            (2030, 5, 30),
-            (2031, 5, 22),
-            (2032, 5, 6),
-            (2033, 5, 26),
-            (2034, 5, 18),
-            (2035, 5, 3),
+            (2018, 5, 10), (2019, 5, 30), (2020, 5, 21), (2021, 5, 13),
+            (2022, 5, 26), (2023, 5, 18), (2024, 5, 9), (2025, 5, 29),
+            (2026, 5, 14), (2027, 5, 6), (2028, 5, 25), (2029, 5, 10),
+            (2030, 5, 30), (2031, 5, 22), (2032, 5, 6), (2033, 5, 26),
+            (2034, 5, 18), (2035, 5, 3),
         ]
 
         for province, (y, m, d) in product(holidays.CH.PROVINCES, known_good):
@@ -267,24 +175,11 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_pfingsten(self):
         known_good = [
-            (2018, 5, 20),
-            (2019, 6, 9),
-            (2020, 5, 31),
-            (2021, 5, 23),
-            (2022, 6, 5),
-            (2023, 5, 28),
-            (2024, 5, 19),
-            (2025, 6, 8),
-            (2026, 5, 24),
-            (2027, 5, 16),
-            (2028, 6, 4),
-            (2029, 5, 20),
-            (2030, 6, 9),
-            (2031, 6, 1),
-            (2032, 5, 16),
-            (2033, 6, 5),
-            (2034, 5, 28),
-            (2035, 5, 13),
+            (2018, 5, 20), (2019, 6, 9), (2020, 5, 31), (2021, 5, 23),
+            (2022, 6, 5), (2023, 5, 28), (2024, 5, 19), (2025, 6, 8),
+            (2026, 5, 24), (2027, 5, 16), (2028, 6, 4), (2029, 5, 20),
+            (2030, 6, 9), (2031, 6, 1), (2032, 5, 16), (2033, 6, 5),
+            (2034, 5, 28), (2035, 5, 13),
         ]
 
         for province, (y, m, d) in product(holidays.CH.PROVINCES, known_good):
@@ -292,24 +187,11 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_pfingstmontag(self):
         known_good = [
-            (2018, 5, 21),
-            (2019, 6, 10),
-            (2020, 6, 1),
-            (2021, 5, 24),
-            (2022, 6, 6),
-            (2023, 5, 29),
-            (2024, 5, 20),
-            (2025, 6, 9),
-            (2026, 5, 25),
-            (2027, 5, 17),
-            (2028, 6, 5),
-            (2029, 5, 21),
-            (2030, 6, 10),
-            (2031, 6, 2),
-            (2032, 5, 17),
-            (2033, 6, 6),
-            (2034, 5, 29),
-            (2035, 5, 14),
+            (2018, 5, 21), (2019, 6, 10), (2020, 6, 1), (2021, 5, 24),
+            (2022, 6, 6), (2023, 5, 29), (2024, 5, 20), (2025, 6, 9),
+            (2026, 5, 25), (2027, 5, 17), (2028, 6, 5), (2029, 5, 21),
+            (2030, 6, 10), (2031, 6, 2), (2032, 5, 17), (2033, 6, 6),
+            (2034, 5, 29), (2035, 5, 14),
         ]
 
         for province, (y, m, d) in product(holidays.CH.PROVINCES, known_good):
@@ -317,29 +199,12 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_fronleichnam(self):
         known_good = [
-            (2014, 6, 19),
-            (2015, 6, 4),
-            (2016, 5, 26),
-            (2017, 6, 15),
-            (2018, 5, 31),
-            (2019, 6, 20),
-            (2020, 6, 11),
-            (2021, 6, 3),
-            (2022, 6, 16),
-            (2023, 6, 8),
-            (2024, 5, 30),
+            (2014, 6, 19), (2015, 6, 4), (2016, 5, 26), (2017, 6, 15),
+            (2018, 5, 31), (2019, 6, 20), (2020, 6, 11), (2021, 6, 3),
+            (2022, 6, 16), (2023, 6, 8), (2024, 5, 30),
         ]
         provinces_that_have = {
-            "AI",
-            "JU",
-            "LU",
-            "NW",
-            "OW",
-            "SZ",
-            "TI",
-            "UR",
-            "VS",
-            "ZG",
+            "AI", "JU", "LU", "NW", "OW", "SZ", "TI", "UR", "VS", "ZG",
         }
         provinces_that_dont = set(holidays.CH.PROVINCES) - provinces_that_have
 
@@ -371,16 +236,7 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_mariae_himmelfahrt(self):
         provinces_that_have = {
-            "AI",
-            "JU",
-            "LU",
-            "NW",
-            "OW",
-            "SZ",
-            "TI",
-            "UR",
-            "VS",
-            "ZG",
+            "AI", "JU", "LU", "NW", "OW", "SZ", "TI", "UR", "VS", "ZG",
         }
         provinces_that_dont = set(holidays.CH.PROVINCES) - provinces_that_have
 
@@ -391,17 +247,9 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_lundi_du_jeune(self):
         known_good = [
-            (2014, 9, 22),
-            (2015, 9, 21),
-            (2016, 9, 19),
-            (2017, 9, 18),
-            (2018, 9, 17),
-            (2019, 9, 16),
-            (2020, 9, 21),
-            (2021, 9, 20),
-            (2022, 9, 19),
-            (2023, 9, 18),
-            (2024, 9, 16),
+            (2014, 9, 22), (2015, 9, 21), (2016, 9, 19), (2017, 9, 18),
+            (2018, 9, 17), (2019, 9, 16), (2020, 9, 21), (2021, 9, 20),
+            (2022, 9, 19), (2023, 9, 18), (2024, 9, 16),
         ]
         provinces_that_have = {"VD"}
         provinces_that_dont = set(holidays.CH.PROVINCES) - provinces_that_have
@@ -422,17 +270,7 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_allerheiligen(self):
         provinces_that_have = {
-            "AI",
-            "GL",
-            "JU",
-            "LU",
-            "NW",
-            "OW",
-            "SG",
-            "SZ",
-            "TI",
-            "UR",
-            "VS",
+            "AI", "GL", "JU", "LU", "NW", "OW", "SG", "SZ", "TI", "UR", "VS",
             "ZG",
         }
         provinces_that_dont = set(holidays.CH.PROVINCES) - provinces_that_have
@@ -444,18 +282,9 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_jeune_genevois(self):
         known_good = [
-            (2014, 9, 11),
-            (2015, 9, 10),
-            (2016, 9, 8),
-            (2017, 9, 7),
-            (2018, 9, 6),
-            (2019, 9, 5),
-            (2020, 9, 10),
-            (2021, 9, 9),
-            (2022, 9, 8),
-            (2023, 9, 7),
-            (2024, 9, 5),
-            (2025, 9, 11),
+            (2014, 9, 11), (2015, 9, 10), (2016, 9, 8), (2017, 9, 7),
+            (2018, 9, 6), (2019, 9, 5), (2020, 9, 10), (2021, 9, 9),
+            (2022, 9, 8), (2023, 9, 7), (2024, 9, 5), (2025, 9, 11),
         ]
         provinces_that_have = {"GE"}
         provinces_that_dont = set(holidays.CH.PROVINCES) - provinces_that_have
@@ -467,28 +296,8 @@ class TestSwitzerland(unittest.TestCase):
 
     def test_stephanstag(self):
         provinces_that_have = {
-            "AG",
-            "AR",
-            "AI",
-            "BL",
-            "BS",
-            "BE",
-            "FR",
-            "GL",
-            "GR",
-            "LU",
-            "NE",
-            "NW",
-            "OW",
-            "SG",
-            "SH",
-            "SZ",
-            "SO",
-            "TG",
-            "TI",
-            "UR",
-            "ZG",
-            "ZH",
+            "AG", "AR", "AI", "BL", "BS", "BE", "FR", "GL", "GR", "LU", "NE",
+            "NW", "OW", "SG", "SH", "SZ", "SO", "TG", "TI", "UR", "ZG", "ZH",
         }
         provinces_that_dont = set(holidays.CH.PROVINCES) - provinces_that_have
 
